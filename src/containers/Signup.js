@@ -20,14 +20,14 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(state.user,state.user,state.password)
+        console.log(state.name,state.user,state.password)
         console.log(e);        
         fetch(url,{
             method: 'POST',
             body: JSON.stringify({
-                "name": state.user,
+                "name": state.name,
                 "email": state.user,
-                "password": state.password,
+                "password_digest": state.password,
             }),
             headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const Signup = () => {
         })
             .then((resp) => resp.json())
             .then((data) => {
-            console.log(data,'hello');
+            console.log(data,'signup');
             },
             (error) => {console.log(error)});
     };
