@@ -4,14 +4,16 @@ import App from './components/App';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
+import Signup from './containers/Signup';
 
 const Routers = () => (
   <BrowserRouter>
     <Navbar />
     <Routes >
       <Route exact path="/"  element={<Home />} />
-      <Route path="/houses/"  element={<App />} />
+      <Route path="/app/"  element={<App />} />
       <Route path="/login/"  element={<Login />} />
+      <Route path="/signup/"  element={<Signup />} />
     </Routes >
   </BrowserRouter>
 );
