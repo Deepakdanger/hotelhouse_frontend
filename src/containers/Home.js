@@ -1,6 +1,8 @@
 import React from 'react';
 import {useQuery} from 'react-query';
+import { useDispatch } from 'react-redux';
 import Housetile from '../components/Housetile';
+import { selectedHouseAction } from '../actions';
 
 const url = 'http://localhost:3000/houses';
 
@@ -27,7 +29,7 @@ const Home = () => {
 
   const {data, error, isError, isLoading } = useQuery('houses', fetchHouses) 
     // first argument is a string to cache and track the query result
-    const selectedHouse = (ele) => dispatch(selectFoodMenuAction(ele));
+    const selectedHouse = (ele) => dispatch(selectedHouseAction(ele));
 
   const house_tile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p> ;
     if(isLoading){
