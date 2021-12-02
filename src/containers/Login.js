@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setCurrentTokenAction } from '../actions';
 
 const Login = () => {
     const [state, setState] = useState({ user: '', password: '' });
+    const dispatch = useDispatch();
 
     const handleUserChange = (e) => {
         setState({ ...state, user: e.target.value });
@@ -14,10 +17,19 @@ const Login = () => {
 
     const url = 'http://localhost:3000/authenticate';
 
+    const authenticate = (data) =>{
+        if(data.auth_token){
+            console.log('correct',data);
+            localStorage.setItem("token", data.auth_token)
+            dispatch(setCurrentTokenAction(data.auth_token));
+        }else{
+            console.log('incorrect',data);
+        }
+
+    };
+
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(state.user,state.password)
-        console.log(e);        
+        e.preventDefault();        
         fetch(url,{
             method: 'POST',
             body: JSON.stringify({
@@ -31,7 +43,7 @@ const Login = () => {
         })
             .then((resp) => resp.json())
             .then((data) => {
-            console.log(data,'hello');
+                authenticate(data);
             },
             (error) => {console.log(error)});
       };
