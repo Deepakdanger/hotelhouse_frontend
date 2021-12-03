@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useQuery} from 'react-query';
 import { useSelector } from 'react-redux';
 import HouseFullDetail from '../components/Housefulldetail';
 
 const Housedetails = () => {
-    
+  const [state, setState] = useState({ Notice:'' });
   const { selected_house } = useSelector((state) => state);
   const url = 'http://localhost:3000/houses/';
   const urll = 'http://localhost:3000/favourites/';
@@ -22,7 +22,7 @@ const Housedetails = () => {
   })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        setState({ ...state, Notice: data.done });
       },
       (error) => {console.log(error)
   }); 
@@ -40,7 +40,7 @@ const createFavourites = (id) => {
 })
     .then((resp) => resp.json())
     .then((data) => {
-      console.log(data);
+      setState({ ...state, Notice: data.done });
     },
     (error) => {console.log(error)
 }); 
@@ -67,7 +67,6 @@ const createFavourites = (id) => {
 
   
   const selectedfav= (ele)=>{
-    console.log(ele);
     ele.status ? deleteFavourites(ele.data.id) : createFavourites(ele.data.id);
   }
 

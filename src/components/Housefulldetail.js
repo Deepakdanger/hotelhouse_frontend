@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HouseFullDetail = ({ ele, changefav }) => {
-  console.log(ele.status);
   const {
     title, cost, location,
   } = ele.data;
