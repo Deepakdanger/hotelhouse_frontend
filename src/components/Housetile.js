@@ -10,10 +10,10 @@ const Housetile = ({ ele, selectHouse }) => {
       <div className="house12">
         {/* <img className="meals_img" src={strMealThumb} alt="NA" /> */}
       </div>
-      <Link to={first1 + id }>
+      <Link to={first1}>
         <button className="house_favourite" type="button" onClick={selectHouse}>{title}</button>
       </Link>
-      {cost}, {location}
+      {cost}, {location},{id}
     </div>
   );
 };

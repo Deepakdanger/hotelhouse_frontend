@@ -21,10 +21,9 @@ const url = 'http://localhost:3000/favourites';
       },
       (error) => {console.log(error)
   }); 
+  }
 
-}
-
-const Favourite = () => {  
+const Favourite = () => {
   const dispatch = useDispatch();
 
   const {data, error, isError, isLoading } = useQuery('favourites', fetchHouses) 

@@ -6,13 +6,15 @@ import Navbar from './components/Navbar';
 import Login from './containers/Login';
 import Signup from './containers/Signup';
 import Favourite from './containers/Favourite';
+import Housedetails from './containers/Housedetails';
 
 const Routers = () => (
   <BrowserRouter>
     <Navbar />
     <Routes >
       <Route exact path="/"  element={<Home />} />
-      <Route exact path="/favourite" element={<Favourite />} />
+      <Route exact path="/favourite/" element={<Favourite />} />
+      <Route path="/houses/" element={<Housedetails />} />
       <Route path="/app/"  element={<App />} />
       <Route path="/login/"  element={<Login />} />
       <Route path="/signup/"  element={<Signup />} />

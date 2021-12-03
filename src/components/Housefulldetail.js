@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HouseFullDetail = ({ ele }) => {
+const HouseFullDetail = ({ ele, changefav }) => {
+  console.log(ele.status);
   const {
     title, cost, location,
-  } = ele;
+  } = ele.data;
 
   return (
     <div className="food">
@@ -20,8 +21,12 @@ const HouseFullDetail = ({ ele }) => {
         <p>
           Area :
           {location}
-        </p>
-       
+        </p>       
+      </div>      
+      <div>
+      <button className="house_favourite" type="button" onClick={changefav}>
+        {ele.status ? 'UNBoookmark' : 'Bookmark'}
+        </button>
       </div>
       <div className="h_discription">
         <p className="h_img">
@@ -38,14 +43,17 @@ HouseFullDetail.propTypes = {
     cost: PropTypes.string,
     location: PropTypes.string,
   }),
+  changefav: PropTypes.func.isRequired,
+  fav: PropTypes.string,
 };
 
 HouseFullDetail.defaultProps = {
   ele: PropTypes.shape({
     title: 'fhfh',
-    cost: '1',
+    cost: '1000',
     location: 'fhfh',
   }),
+  fav: 'fhfh',
 };
 
 export default HouseFullDetail;
