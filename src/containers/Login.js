@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 
 const Login = () => {
     const [state, setState] = useState({ user: '', password: '' });
     const { error_message } = useSelector((state) => state);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleUserChange = (e) => {
         setState({ ...state, user: e.target.value });
@@ -23,9 +24,10 @@ const Login = () => {
             console.log('correct',data);
             localStorage.setItem("token", data.auth_token)
             dispatch(setCurrentTokenAction(data.auth_token));
+            navigate('/home');
         }else{
             console.log('incorrect',data);
-            dispatch(setErrorLoginAction(data.error.user_authentication));
+            dispatch(setErrorLoginAction(data.error));
         }
 
     };
@@ -60,9 +62,6 @@ const Login = () => {
         <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
         <button className="submit_login" type="submit">Submit</button>
       </form>
-      <Link to="/home">
-      <div className="login_back_home"> BACK </div>
-      </Link>
       <Link to="/signup">
       <div className="login_sign_up"> SIGN UP </div>
       </Link>

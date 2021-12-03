@@ -3,6 +3,7 @@ import {useQuery} from 'react-query';
 import { useDispatch } from 'react-redux';
 import Housetile from '../components/Housetile';
 import { selectedHouseAction } from '../actions';
+import CategoryFilter from '../components/Categoryfilter';
 
 const url = 'http://localhost:3000/houses';
 
@@ -31,7 +32,9 @@ const Home = () => {
     // first argument is a string to cache and track the query result
     const selectedHouse = (ele) => dispatch(selectedHouseAction(ele));
 
-  const house_tile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p> ;
+  const filteredHouse = filter === 'All' ? data : data.filter((house) => house.category === filter);
+
+  const house_tile = filteredHouse ? filteredHouse.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p> ;
     if(isLoading){
         return <div>Loading...</div>
     }
@@ -43,6 +46,7 @@ const Home = () => {
       return(
         <div className='container'>
           <h1>Houses</h1>
+          <p className="book_category"><CategoryFilter categorySelect={categorySelect} /></p>
           {house_tile}
         </div>
     )

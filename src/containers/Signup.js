@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate  } from 'react-router-dom';
+import { setErrorSigninAction } from '../actions';
 
 const Signup = () => {
     const [state, setState] = useState({ name: '', user: '', password: '' });
+    const { error_signin } = useSelector((state) => state);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleNameChange = (e) => {
         setState({ ...state, name: e.target.value });
@@ -17,6 +22,14 @@ const Signup = () => {
     };
 
     const url = 'http://localhost:3000/users';
+
+    const authenticate = (data) =>{
+      if(data.check){
+        navigate('/');
+      }else{
+        dispatch(setErrorSigninAction(data.error));
+      }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();      
@@ -34,7 +47,7 @@ const Signup = () => {
         })
             .then((resp) => resp.json())
             .then((data) => {
-            console.log(data,'signup');
+              authenticate(data);
             },
             (error) => {console.log(error)});
     };
@@ -43,6 +56,10 @@ const Signup = () => {
   return (
     <div className="login_page">
       <div className="login_new"> SIGN UP </div>
+      <p>{ error_signin[0] }</p>
+      <p>{ error_signin[1] }</p>
+      <p>{ error_signin[2] }</p>
+      <p>{ error_signin[3] }</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input className="input_name" type="text" id="title" placeholder="Name" value={state.name} onChange={(e) => handleNameChange(e)} />
         <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />

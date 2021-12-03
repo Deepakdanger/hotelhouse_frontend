@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Housetile = ({ ele, selectHouse }) => {
-  const { id, title, cost, location } = ele;
+  const { id, title, cost, location, category } = ele;
   const first1 = '/houses/';
   return (
     <div className="house_tile">
@@ -13,7 +13,7 @@ const Housetile = ({ ele, selectHouse }) => {
       <Link to={first1}>
         <button className="house_favourite" type="button" onClick={selectHouse}>{title}</button>
       </Link>
-      {cost}, {location},{id}
+      {cost}, {location},{id},{category}
     </div>
   );
 };

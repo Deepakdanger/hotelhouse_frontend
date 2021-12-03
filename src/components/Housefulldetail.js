@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const HouseFullDetail = ({ ele, changefav }) => {
   const {
-    title, cost, location,
+    title, cost, location, category
   } = ele.data;
 
   return (
@@ -20,7 +20,11 @@ const HouseFullDetail = ({ ele, changefav }) => {
         <p>
           Area :
           {location}
-        </p>       
+        </p>
+        <p>
+          Category :
+          {category}
+        </p> 
       </div>      
       <div>
       <button className="house_favourite" type="button" onClick={changefav}>
