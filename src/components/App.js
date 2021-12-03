@@ -1,9 +1,11 @@
 import React from 'react';
-// import Test from '../containers/Test';
+import Home from '../containers/Home';
+import Navbar from './Navbar';
 
 const App = () => (
-  <div className="app">
-    {/* <Test /> */}fsfasa
+  <div className="app">    
+    <Navbar />
+    <Home />
   </div>
 );
 

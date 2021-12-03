@@ -24,7 +24,7 @@ const Login = () => {
             console.log('correct',data);
             localStorage.setItem("token", data.auth_token)
             dispatch(setCurrentTokenAction(data.auth_token));
-            navigate('/home');
+            navigate('/app');
         }else{
             console.log('incorrect',data);
             dispatch(setErrorLoginAction(data.error));

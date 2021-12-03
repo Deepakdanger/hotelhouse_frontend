@@ -66,10 +66,7 @@ const Signup = () => {
         <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
         <button className="submit_login" type="submit">Submit</button>
       </form>
-      <Link to="/home">
-      <div className="signup_back_home"> BACK </div>
-      </Link>
-      <Link to="/login">
+      <Link to="/">
       <div className="sign_up_login"> LOG IN </div>
       </Link>
     </div>    
