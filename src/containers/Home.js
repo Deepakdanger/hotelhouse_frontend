@@ -1,8 +1,8 @@
 import React from 'react';
 import {useQuery} from 'react-query';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Housetile from '../components/Housetile';
-import { selectedHouseAction } from '../actions';
+import { selectedHouseAction, setCategoryAction } from '../actions';
 import CategoryFilter from '../components/Categoryfilter';
 
 const url = 'http://localhost:3000/houses';
@@ -27,10 +27,11 @@ const url = 'http://localhost:3000/houses';
 const Home = () => {
 
   const dispatch = useDispatch();
-
+  const { filter } = useSelector((state) => state);
   const {data, error, isError, isLoading } = useQuery('houses', fetchHouses) 
     // first argument is a string to cache and track the query result
     const selectedHouse = (ele) => dispatch(selectedHouseAction(ele));
+    const categorySelect = (ele) => dispatch(setCategoryAction(ele.value));
 
   const filteredHouse = filter === 'All' ? data : data.filter((house) => house.category === filter);
 
@@ -46,7 +47,7 @@ const Home = () => {
       return(
         <div className='container'>
           <h1>Houses</h1>
-          <p className="book_category"><CategoryFilter categorySelect={categorySelect} /></p>
+          <div className="book_category"><CategoryFilter categorySelect={categorySelect} /></div>
           {house_tile}
         </div>
     )
