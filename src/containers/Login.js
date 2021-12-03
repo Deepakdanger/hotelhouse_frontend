@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setCurrentTokenAction } from '../actions';
+import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 
 const Login = () => {
     const [state, setState] = useState({ user: '', password: '' });
+    const { error_message } = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const handleUserChange = (e) => {
@@ -24,6 +25,7 @@ const Login = () => {
             dispatch(setCurrentTokenAction(data.auth_token));
         }else{
             console.log('incorrect',data);
+            dispatch(setErrorLoginAction(data.error.user_authentication));
         }
 
     };
@@ -52,6 +54,7 @@ const Login = () => {
   return (
     <div className="login_page">
       <div className="login_new"> LOGIN </div>
+      <span>{error_message}</span>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />
         <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
@@ -63,7 +66,7 @@ const Login = () => {
       <Link to="/signup">
       <div className="login_sign_up"> SIGN UP </div>
       </Link>
-    </div>    
+    </div>
   );
 };
 

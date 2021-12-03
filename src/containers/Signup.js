@@ -19,15 +19,13 @@ const Signup = () => {
     const url = 'http://localhost:3000/users';
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(state.name,state.user,state.password)
-        console.log(e);        
+        e.preventDefault();      
         fetch(url,{
             method: 'POST',
             body: JSON.stringify({
                 "name": state.name,
                 "email": state.user,
-                "password_digest": state.password,
+                "password": state.password,
             }),
             headers: {
             'Content-Type': 'application/json',
