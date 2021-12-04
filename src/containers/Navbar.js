@@ -15,7 +15,7 @@ const Navbar = () => {
         <span className="navhome">Favourite</span>
       </Link>
       <Link to="/">
-        <span className="navapp" onClick={signout}>Sign Out</span>
+        <button type="button" className="navapp" onClick={signout}>Sign Out</button>
       </Link>
     </div>
 

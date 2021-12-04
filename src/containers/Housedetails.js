@@ -22,8 +22,7 @@ const Housedetails = () => {
       .then((data) => {
         setState({ ...state, Notice: data.done });
       },
-      (error) => {
-        console.log(error);
+      () => {
       });
   };
   const createFavourites = (id) => {
@@ -41,8 +40,7 @@ const Housedetails = () => {
       .then((data) => {
         setState({ ...state, Notice: data.done });
       },
-      (error) => {
-        console.log(error);
+      () => {
       });
   };
 
@@ -54,20 +52,20 @@ const Housedetails = () => {
     },
   })
     .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-      return data;
-    },
-    (error) => {
-      console.log(error);
-    });
+    .then((data) => data,
+      () => {
+      });
 
   const {
     data, error, isError, isLoading,
   } = useQuery('Housedetail', FetchHousesDetail);
 
   const selectedfav = (ele) => {
-    ele.status ? deleteFavourites(ele.data.id) : createFavourites(ele.data.id);
+    if (ele.status) {
+      deleteFavourites(ele.data.id);
+    } else {
+      createFavourites(ele.data.id);
+    }
   };
 
   if (isLoading) {
@@ -90,6 +88,11 @@ const Housedetails = () => {
       </div>
     );
   }
+  return (
+    <div>
+      Error
+    </div>
+  );
 };
 
 export default Housedetails;
