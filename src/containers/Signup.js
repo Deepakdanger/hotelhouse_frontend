@@ -25,7 +25,7 @@ const Signup = () => {
 
     const authenticate = (data) =>{
       if(data.check){
-        navigate('/');
+        navigate('/login');
       }else{
         dispatch(setErrorSigninAction(data.error));
       }
@@ -67,6 +67,9 @@ const Signup = () => {
         <button className="submit_login" type="submit">Submit</button>
       </form>
       <Link to="/">
+      <div className="backpage"> BACK TO HOME </div>
+      </Link>
+      <Link to="/login">
       <div className="sign_up_login"> LOG IN </div>
       </Link>
     </div>    

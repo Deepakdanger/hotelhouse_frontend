@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from '../containers/Home';
-import Navbar from './Navbar';
+import Navbar from '../containers/Navbar';
 
 const App = () => (
   <div className="app">    
