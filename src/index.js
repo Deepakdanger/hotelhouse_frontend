@@ -5,6 +5,7 @@ import store from './reducers/index';
 import Routers from './Routes';
 import { QueryClient, QueryClientProvider } from "react-query";
 
+
 const queryClient = new QueryClient();
 
 ReactDOM.render(

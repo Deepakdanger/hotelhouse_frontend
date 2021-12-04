@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import {useQuery} from 'react-query';
-import { useSelector } from 'react-redux';
 import HouseFullDetail from '../components/Housefulldetail';
 
 const Housedetails = () => {
   const [state, setState] = useState({ Notice:'' });
-  const { selected_house } = useSelector((state) => state);
   const url = 'http://localhost:3000/houses/';
   const urll = 'http://localhost:3000/favourites/';
 
@@ -47,7 +45,7 @@ const createFavourites = (id) => {
 }
 
   const FetchHousesDetail= () =>{
-    return fetch((url + selected_house),{
+    return fetch((url + localStorage.getItem("houseid")),{
       method: 'GET',
       headers: {
       'Content-Type': 'application/json',

@@ -30,7 +30,10 @@ const Home = () => {
   const { filter } = useSelector((state) => state);
   const {data, error, isError, isLoading } = useQuery('houses', fetchHouses) 
     // first argument is a string to cache and track the query result
-    const selectedHouse = (ele) => dispatch(selectedHouseAction(ele));
+    const selectedHouse = (ele) => {
+      localStorage.setItem("houseid", ele.id);
+      dispatch(selectedHouseAction(ele));
+    };
     const categorySelect = (ele) => dispatch(setCategoryAction(ele.value));
 
   const filteredHouse = filter === 'All' ? data : data.filter((house) => house.category === filter);

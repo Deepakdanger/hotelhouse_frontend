@@ -22,7 +22,7 @@ const Login = () => {
     const authenticate = (data) =>{
         if(data.auth_token){
             console.log('correct',data);
-            localStorage.setItem("token", data.auth_token)
+            localStorage.setItem("token", data.auth_token);
             dispatch(setCurrentTokenAction(data.auth_token));
             navigate('/app');
         }else{

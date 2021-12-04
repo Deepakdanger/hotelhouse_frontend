@@ -27,7 +27,10 @@ const Favourite = () => {
   const dispatch = useDispatch();
 
   const {data, error, isError, isLoading } = useQuery('favourites', fetchHouses) 
-  const selectedHouse = (ele) => dispatch(selectedHouseAction(ele));
+  const selectedHouse = (ele) => {
+    localStorage.setItem("houseid", ele);
+    dispatch(selectedHouseAction(ele));
+  };
 
   const house_tile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p> ;
     if(isLoading){
