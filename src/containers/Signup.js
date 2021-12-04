@@ -54,23 +54,33 @@ const Signup = () => {
 
   return (
     <div className="login_page">
-      <div className="login_new"> SIGN UP </div>
-      <p>{ errorsignin[0] }</p>
-      <p>{ errorsignin[1] }</p>
-      <p>{ errorsignin[2] }</p>
-      <p>{ errorsignin[3] }</p>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <input className="input_name" type="text" id="title" placeholder="Name" value={state.name} onChange={(e) => handleNameChange(e)} />
-        <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />
-        <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
-        <button className="submit_login" type="submit">Submit</button>
-      </form>
-      <Link to="/">
-        <div className="backpage"> BACK TO HOME </div>
-      </Link>
-      <Link to="/login">
-        <div className="sign_up_login"> LOG IN </div>
-      </Link>
+      LOGIN
+      <div className="login_block">
+        <div className="login_new"> SIGN UP </div>
+        <div className="login_error">
+          <p>{ errorsignin[0] }</p>
+          <p>{ errorsignin[1] }</p>
+          <p>{ errorsignin[2] }</p>
+          <p>{ errorsignin[3] }</p>
+        </div>
+        <form className="col" onSubmit={(e) => handleSubmit(e)}>
+          Username :-
+          <input className="input_name" type="text" id="title" placeholder="Name" value={state.name} onChange={(e) => handleNameChange(e)} />
+          E - mail :-
+          <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />
+          Password :-
+          <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
+          <button className="submit_login" type="submit">Sign up</button>
+        </form>
+        <div className="backpage">
+          <Link to="/">
+            <div className="backpage1">&larr; BACK TO HOME </div>
+          </Link>
+          <Link to="/login">
+            <div className="login_sign_up"> LOG IN  &rarr;</div>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

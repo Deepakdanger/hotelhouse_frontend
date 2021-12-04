@@ -2,13 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Homepage = () => (
-  <div>
+  <div className="homepage">
+    <div>
+      LOGO
+    </div>
     <Link to="/login">
-      <span className="navhome">LOGIN</span>
+      <button type="button" className="slide homepage_login">LOGIN</button>
     </Link>
     <Link to="/signup">
-      <span className="navapp">SIGN UP</span>
+      <button type="button" className="slide homepage_signup">SIGN UP</button>
     </Link>
+    <div className="homepage_house">
+      Search Houses &rarr;
+    </div>
   </div>
 );
 
