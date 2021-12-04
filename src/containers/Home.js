@@ -47,14 +47,13 @@ const Home = () => {
     );
   }
 
-  
-    return (
-      <div className="container">
-        <h1>Houses</h1>
-        <div className="book_category"><CategoryFilter categorySelect={categorySelect} /></div>
-        {housetile}
-      </div>
-    );
-  };
+  return (
+    <div className="container">
+      <h1>Houses</h1>
+      <div className="book_category"><CategoryFilter categorySelect={categorySelect} /></div>
+      {housetile}
+    </div>
+  );
+};
 
 export default Home;

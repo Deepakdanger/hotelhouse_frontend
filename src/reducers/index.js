@@ -9,20 +9,20 @@ import SetSignErrorReducer from './Setsigninerrorreducer';
 import SetCategoryReducer from './Setcategoryreducer';
 
 const rootReducer = combineReducers({
-  current_user_token: SetCurrentUserTokenReducer,
-  selected_house: SelectedHouseReducer,
-  error_message: SetErrorReducer,
-  error_signin: SetSignErrorReducer,
+  currentuser_token: SetCurrentUserTokenReducer,
+  selectedhouse: SelectedHouseReducer,
+  errormessage: SetErrorReducer,
+  errorsignin: SetSignErrorReducer,
   filter: SetCategoryReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
-  current_user_token: '',
-  selected_house: '',
-  error_message: '',
-  error_signin: '',
+  currentuser_token: '',
+  selectedhouse: '',
+  errormessage: '',
+  errorsignin: '',
   filter: 'All',
 };
 

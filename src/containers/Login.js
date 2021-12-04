@@ -5,7 +5,7 @@ import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 
 const Login = () => {
   const [state, setState] = useState({ user: '', password: '' });
-  const { error_message } = useSelector((state) => state);
+  const { errormessage } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,12 +21,10 @@ const Login = () => {
 
   const authenticate = (data) => {
     if (data.auth_token) {
-      console.log('correct', data);
       localStorage.setItem('token', data.auth_token);
       dispatch(setCurrentTokenAction(data.auth_token));
       navigate('/app');
     } else {
-      console.log('incorrect', data);
       dispatch(setErrorLoginAction(data.error));
     }
   };
@@ -48,13 +46,13 @@ const Login = () => {
       .then((data) => {
         authenticate(data);
       },
-      (error) => { console.log(error); });
+      () => {});
   };
 
   return (
     <div className="login_page">
       <div className="login_new"> LOGIN </div>
-      <span>{error_message}</span>
+      <span>{errormessage}</span>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />
         <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
