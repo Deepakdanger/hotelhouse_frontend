@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 
 const Displayhouses = ({ ele, selecthouse }) => {
   const { id, title, cost } = ele;
-  console.log(ele);
   return (
     <div className="houstile">
-      <span>{id} {title} {cost}</span>
+      <span>
+        {id}
+        {' '}
+        {title}
+        {' '}
+        {cost}
+      </span>
       <button className="des" type="button" onClick={selecthouse}>Destroy</button>
     </div>
   );

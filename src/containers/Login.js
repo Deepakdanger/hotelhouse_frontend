@@ -4,54 +4,52 @@ import { Link, useNavigate } from 'react-router-dom';
 import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 
 const Login = () => {
-    const [state, setState] = useState({ user: '', password: '' });
-    const { error_message } = useSelector((state) => state);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const [state, setState] = useState({ user: '', password: '' });
+  const { error_message } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const handleUserChange = (e) => {
-        setState({ ...state, user: e.target.value });
-    };
-    
-    const handlePassChange = (e) => {
-        setState({ ...state, password: e.target.value });
-    };
+  const handleUserChange = (e) => {
+    setState({ ...state, user: e.target.value });
+  };
 
-    const url = 'http://localhost:3000/authenticate';
+  const handlePassChange = (e) => {
+    setState({ ...state, password: e.target.value });
+  };
 
-    const authenticate = (data) =>{
-        if(data.auth_token){
-            console.log('correct',data);
-            localStorage.setItem("token", data.auth_token);
-            dispatch(setCurrentTokenAction(data.auth_token));
-            navigate('/app');
-        }else{
-            console.log('incorrect',data);
-            dispatch(setErrorLoginAction(data.error));
-        }
+  const url = 'http://localhost:3000/authenticate';
 
-    };
+  const authenticate = (data) => {
+    if (data.auth_token) {
+      console.log('correct', data);
+      localStorage.setItem('token', data.auth_token);
+      dispatch(setCurrentTokenAction(data.auth_token));
+      navigate('/app');
+    } else {
+      console.log('incorrect', data);
+      dispatch(setErrorLoginAction(data.error));
+    }
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();        
-        fetch(url,{
-            method: 'POST',
-            body: JSON.stringify({
-                "email": state.user,
-                "password": state.password,
-            }),
-            headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            },
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                authenticate(data);
-            },
-            (error) => {console.log(error)});
-      };
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: state.user,
+        password: state.password,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        authenticate(data);
+      },
+      (error) => { console.log(error); });
+  };
 
   return (
     <div className="login_page">
@@ -63,10 +61,10 @@ const Login = () => {
         <button className="submit_login" type="submit">Submit</button>
       </form>
       <Link to="/">
-      <div className="backpage"> BACK TO HOME </div>
+        <div className="backpage"> BACK TO HOME </div>
       </Link>
       <Link to="/signup">
-      <div className="login_sign_up"> SIGN UP </div>
+        <div className="login_sign_up"> SIGN UP </div>
       </Link>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '../containers/Home';
 
 const App = () => (
-  <div className="app">    
+  <div className="app">
     <Home />
   </div>
 );

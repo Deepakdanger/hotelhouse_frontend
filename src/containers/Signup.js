@@ -1,57 +1,56 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { setErrorSigninAction } from '../actions';
 
 const Signup = () => {
-    const [state, setState] = useState({ name: '', user: '', password: '' });
-    const { error_signin } = useSelector((state) => state);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const [state, setState] = useState({ name: '', user: '', password: '' });
+  const { error_signin } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const handleNameChange = (e) => {
-        setState({ ...state, name: e.target.value });
-    };
+  const handleNameChange = (e) => {
+    setState({ ...state, name: e.target.value });
+  };
 
-    const handleUserChange = (e) => {
-        setState({ ...state, user: e.target.value });
-    };
-    
-    const handlePassChange = (e) => {
-        setState({ ...state, password: e.target.value });
-    };
+  const handleUserChange = (e) => {
+    setState({ ...state, user: e.target.value });
+  };
 
-    const url = 'http://localhost:3000/users';
+  const handlePassChange = (e) => {
+    setState({ ...state, password: e.target.value });
+  };
 
-    const authenticate = (data) =>{
-      if(data.check){
-        navigate('/login');
-      }else{
-        dispatch(setErrorSigninAction(data.error));
-      }
-    };
+  const url = 'http://localhost:3000/users';
 
-    const handleSubmit = (e) => {
-        e.preventDefault();      
-        fetch(url,{
-            method: 'POST',
-            body: JSON.stringify({
-                "name": state.name,
-                "email": state.user,
-                "password": state.password,
-            }),
-            headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            },
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-              authenticate(data);
-            },
-            (error) => {console.log(error)});
-    };
+  const authenticate = (data) => {
+    if (data.check) {
+      navigate('/login');
+    } else {
+      dispatch(setErrorSigninAction(data.error));
+    }
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: state.name,
+        email: state.user,
+        password: state.password,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        authenticate(data);
+      },
+      (error) => { console.log(error); });
+  };
 
   return (
     <div className="login_page">
@@ -67,12 +66,12 @@ const Signup = () => {
         <button className="submit_login" type="submit">Submit</button>
       </form>
       <Link to="/">
-      <div className="backpage"> BACK TO HOME </div>
+        <div className="backpage"> BACK TO HOME </div>
       </Link>
       <Link to="/login">
-      <div className="sign_up_login"> LOG IN </div>
+        <div className="sign_up_login"> LOG IN </div>
       </Link>
-    </div>    
+    </div>
   );
 };
 

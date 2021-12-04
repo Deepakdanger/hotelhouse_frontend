@@ -10,7 +10,7 @@
 
 //   // const dispatch = useDispatch();
 
-//   const dataChange = (data) => {    
+//   const dataChange = (data) => {
 //     setHouses(data);
 //   };
 
@@ -24,7 +24,7 @@
 //     })
 //       .then((resp) => resp.json())
 //       .then((data) => {
-//         console.log(data);        
+//         console.log(data);
 //         console.log(houses);
 //         dataChange(data);
 //       },

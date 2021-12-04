@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const signout = () => {
-    localStorage.setItem("token", '');
-  }
+    localStorage.setItem('token', '');
+  };
 
-  return(
+  return (
     <div>
       <Link to="/app">
         <span className="navhome">Home</span>
@@ -17,7 +17,7 @@ const Navbar = () => {
       <Link to="/">
         <span className="navapp" onClick={signout}>Sign Out</span>
       </Link>
-    </div> 
+    </div>
 
   );
 };

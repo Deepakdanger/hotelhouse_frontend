@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const HouseFullDetail = ({ ele, changefav }) => {
   const {
-    title, cost, location, category
+    title, cost, location, category,
   } = ele.data;
 
   return (
@@ -24,11 +24,11 @@ const HouseFullDetail = ({ ele, changefav }) => {
         <p>
           Category :
           {category}
-        </p> 
-      </div>      
+        </p>
+      </div>
       <div>
-      <button className="house_favourite" type="button" onClick={changefav}>
-        {ele.status ? 'UNBoookmark' : 'Bookmark'}
+        <button className="house_favourite" type="button" onClick={changefav}>
+          {ele.status ? 'UNBoookmark' : 'Bookmark'}
         </button>
       </div>
       <div className="h_discription">
@@ -42,21 +42,27 @@ const HouseFullDetail = ({ ele, changefav }) => {
 
 HouseFullDetail.propTypes = {
   ele: PropTypes.shape({
-    title: PropTypes.string,
-    cost: PropTypes.string,
-    location: PropTypes.string,
+    data: PropTypes.shape({
+      title: PropTypes.string,
+      cost: PropTypes.string,
+      location: PropTypes.string,
+      category: PropTypes.string,
+    }),
+    status: PropTypes.bool,
   }),
   changefav: PropTypes.func.isRequired,
-  fav: PropTypes.string,
 };
 
 HouseFullDetail.defaultProps = {
   ele: PropTypes.shape({
-    title: 'fhfh',
-    cost: '1000',
-    location: 'fhfh',
+    data: PropTypes.shape({
+      title: 'fhfh',
+      cost: '1000',
+      location: 'fhfh',
+      category: 'House',
+    }),
+    status: false,
   }),
-  fav: 'fhfh',
 };
 
 export default HouseFullDetail;
