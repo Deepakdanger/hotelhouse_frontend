@@ -32,6 +32,7 @@ Housetile.propTypes = {
     title: PropTypes.string,
     cost: PropTypes.string,
     location: PropTypes.string,
+    category: PropTypes.string,
   }),
   selectHouse: PropTypes.func.isRequired,
 };
@@ -42,6 +43,7 @@ Housetile.defaultProps = {
     title: 'Houses',
     cost: '1122',
     location: 'india',
+    category: 'House',
   }),
 };
 

@@ -16,8 +16,7 @@ const fetchHouses = () => fetch(url, {
 })
   .then((resp) => resp.json())
   .then((data) => data,
-    (error) => {
-      console.log(error);
+    () => {
     });
 
 const Home = () => {
@@ -35,7 +34,7 @@ const Home = () => {
 
   const filteredHouse = filter === 'All' ? data : data.filter((house) => house.category === filter);
 
-  const house_tile = filteredHouse ? filteredHouse.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p>;
+  const housetile = filteredHouse ? filteredHouse.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p>;
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -48,15 +47,14 @@ const Home = () => {
     );
   }
 
-  if (data) {
+  
     return (
       <div className="container">
         <h1>Houses</h1>
         <div className="book_category"><CategoryFilter categorySelect={categorySelect} /></div>
-        {house_tile}
+        {housetile}
       </div>
     );
-  }
-};
+  };
 
 export default Home;

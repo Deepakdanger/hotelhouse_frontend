@@ -14,13 +14,9 @@ const fetchHouses = () => fetch(url, {
   },
 })
   .then((resp) => resp.json())
-  .then((data) => {
-    console.log(data);
-    return data;
-  },
-  (error) => {
-    console.log(error);
-  });
+  .then((data) => data,
+    () => {
+    });
 
 const Favourite = () => {
   const dispatch = useDispatch();
@@ -33,7 +29,7 @@ const Favourite = () => {
     dispatch(selectedHouseAction(ele));
   };
 
-  const house_tile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p>;
+  const houseTile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p>;
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -45,15 +41,12 @@ const Favourite = () => {
       </div>
     );
   }
-
-  if (data) {
-    return (
-      <div className="container">
-        <h1>Favourites</h1>
-        {house_tile}
-      </div>
-    );
-  }
+  return (
+    <div className="container">
+      <h1>Favourites</h1>
+      {houseTile}
+    </div>
+  );
 };
 
 export default Favourite;
