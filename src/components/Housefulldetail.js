@@ -28,7 +28,7 @@ const HouseFullDetail = ({ ele, changefav }) => {
       </div>
       <div>
         <button className="house_favourite" type="button" onClick={changefav}>
-          {ele.status ? 'UNBoookmark' : 'Bookmark'}
+          {ele.status ? 'Remove from Boookmark' : 'Bookmark'}
         </button>
       </div>
       <div className="h_discription">

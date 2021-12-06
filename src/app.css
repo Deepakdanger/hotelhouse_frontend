@@ -47,7 +47,7 @@
 
     .login_new {
         margin-left: 34%;
-        color: darkred;
+        color: rgb(255, 123, 0);
         font-size: 2rem;
         font-weight: bolder;
     }
@@ -76,7 +76,7 @@
     .login_block form button {
         width: 92%;
         height: 2.3rem;
-        background-color: darkred;
+        background-color: rgb(255, 123, 0);
         color: white;
         border: none;
         border-radius: 100px;
@@ -90,7 +90,7 @@
     }
 
     .backpage a {
-        color: darkred;
+        color: rgb(255, 123, 0);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-weight: bolder;
         text-decoration: none; 

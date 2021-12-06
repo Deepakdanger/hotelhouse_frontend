@@ -7,6 +7,7 @@ import SelectedHouseReducer from './Selecthousereducer';
 import SetErrorReducer from './Seterrorreducer';
 import SetSignErrorReducer from './Setsigninerrorreducer';
 import SetCategoryReducer from './Setcategoryreducer';
+import SetStatusReducer from './setstatusreducer';
 
 const rootReducer = combineReducers({
   currentuser_token: SetCurrentUserTokenReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   errormessage: SetErrorReducer,
   errorsignin: SetSignErrorReducer,
   filter: SetCategoryReducer,
+  status: SetStatusReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

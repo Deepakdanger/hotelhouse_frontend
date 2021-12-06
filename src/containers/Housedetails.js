@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { useDispatch } from 'react-redux';
 import HouseFullDetail from '../components/Housefulldetail';
+import { setStatusAction } from '../actions';
 
 const Housedetails = () => {
   const [state, setState] = useState({ Notice: '' });
+  const dispatch = useDispatch();
   const url = 'http://localhost:3000/houses/';
   const urll = 'http://localhost:3000/favourites/';
 
@@ -63,6 +66,7 @@ const Housedetails = () => {
   const selectedfav = (ele) => {
     if (ele.status) {
       deleteFavourites(ele.data.id);
+      dispatch(setStatusAction(ele.status));
     } else {
       createFavourites(ele.data.id);
     }
