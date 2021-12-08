@@ -77,8 +77,7 @@ const Housedetails = () => {
 
   if (datatest.dataset) {
     return (
-      <div className="container">
-        <h1>House</h1>
+      <div className="housedetail_container">
         <HouseFullDetail key={`ele-${datatest.dataset.data.id}`} ele={datatest.dataset} changefav={() => selectedfav(datatest)} />
       </div>
     );
