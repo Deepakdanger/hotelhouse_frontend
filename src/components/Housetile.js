@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 const Housetile = ({ ele, selectHouse }) => {
   const {
@@ -8,10 +9,7 @@ const Housetile = ({ ele, selectHouse }) => {
   } = ele;
   const first1 = '/houses/';
   return (
-    <div className="house_tile">
-      <div className="house12">
-        {/* <img className="meals_img" src={strMealThumb} alt="NA" /> */}
-      </div>
+    <div className="house_tile1 slide">
       <Link to={first1}>
         <button className="house_favourite" type="button" onClick={selectHouse}>{title}</button>
       </Link>
@@ -22,6 +20,13 @@ const Housetile = ({ ele, selectHouse }) => {
       {id}
       ,
       {category}
+      <div className="star_rating">
+        <span className="checked"><FaStar /></span>
+        <span className="checked"><FaStar /></span>
+        <span className="checked"><FaStar /></span>
+        <span className="checked"><FaStar /></span>
+        <span className="unchecked"><FaStar /></span>
+      </div>
     </div>
   );
 };

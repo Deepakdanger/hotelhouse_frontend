@@ -5,7 +5,7 @@
         background-color: cadetblue;
     }
 
-    .slide {
+    .slide1 {
         height: 2rem;
         width: 8rem;
         background-color: chocolate;
@@ -103,4 +103,72 @@
     .backpage1 {
         float: left;
     }
+
+    .home_container {
+        width: 100%;
+        height: auto;
+        background-color: rgb(106, 106, 190);
+        
+        overflow: hidden;
+    }
+
+    .house_head {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .slider {
+        width: 100%;
+        height: 450px;
+        display: flex;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;  
+      }
+      
+      .slide {
+        width: 80%;
+        flex-shrink: 0;
+        height: 100%;
+        scroll-snap-align: start;
+        scroll-behavior: smooth;
+      }
+      .house_tile {
+          
+        margin-top: 1rem;
+        margin-left: 3rem;
+        margin-bottom: 3rem;
+
+      }
+
+      .house_tile1 {
+          margin-right: 20rem;
+          border-right: 2px solid black;
+          background-color: rgb(255, 255, 255);
+          background-image: url(https://picsum.photos/400/350);
+          background-repeat: no-repeat;
+          border-radius: 10px;
+        }
+        .house_tile1 button {
+            border: none;
+            margin-top: 23rem;
+            margin-left: 1rem;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .checked {
+            color: yellow;            
+        }
+
+        .unchecked {
+            color: rgb(182, 178, 178);            
+        }
+
+        .star_rating {
+            margin-left: 1.1rem;
+            margin-top: 0.3rem;
+        }
+
+
 

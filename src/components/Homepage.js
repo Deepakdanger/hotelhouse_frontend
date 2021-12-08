@@ -7,10 +7,10 @@ const Homepage = () => (
       LOGO
     </div>
     <Link to="/login">
-      <button type="button" className="slide homepage_login">LOGIN</button>
+      <button type="button" className="slide1 homepage_login">LOGIN</button>
     </Link>
     <Link to="/signup">
-      <button type="button" className="slide homepage_signup">SIGN UP</button>
+      <button type="button" className="slide1 homepage_signup">SIGN UP</button>
     </Link>
     <div className="homepage_house">
       Search Houses &rarr;

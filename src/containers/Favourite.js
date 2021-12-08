@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useDispatch } from 'react-redux';
 import Housetile from '../components/Housetile';
-import { selectedHouseAction } from '../actions';
+import { selectedHouseAction, setStatusAction } from '../actions';
 
 const url = 'http://localhost:3000/favourites';
 
@@ -25,8 +25,9 @@ const Favourite = () => {
     data, error, isError, isLoading,
   } = useQuery('favourites', fetchHouses);
   const selectedHouse = (ele) => {
-    localStorage.setItem('houseid', ele);
+    localStorage.setItem('houseid', ele.id);
     dispatch(selectedHouseAction(ele));
+    dispatch(setStatusAction('we'));
   };
 
   const houseTile = data ? data.map((ele) => (<Housetile key={`ele-${ele.id}`} ele={ele} selectHouse={() => selectedHouse(ele)} />)) : <p>hello111</p>;

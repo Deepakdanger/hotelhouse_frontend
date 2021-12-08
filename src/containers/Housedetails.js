@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import HouseFullDetail from '../components/Housefulldetail';
 import { setStatusAction } from '../actions';
 
 const Housedetails = () => {
   const [state, setState] = useState({ Notice: '' });
+  const [datatest, setDatatest] = useState({ dataset: null });
+  const { status } = useSelector((state) => state);
+
   const dispatch = useDispatch();
+
   const url = 'http://localhost:3000/houses/';
   const urll = 'http://localhost:3000/favourites/';
 
@@ -47,48 +50,36 @@ const Housedetails = () => {
       });
   };
 
-  const FetchHousesDetail = () => fetch((url + localStorage.getItem('houseid')), {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token'),
-    },
-  })
-    .then((resp) => resp.json())
-    .then((data) => data,
+  useEffect(() => {
+    fetch((url + localStorage.getItem('houseid')), {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setDatatest({ ...datatest, dataset: data });
+      },
       () => {
       });
+  }, [status]);
 
-  const {
-    data, error, isError, isLoading,
-  } = useQuery('Housedetail', FetchHousesDetail);
-
-  const selectedfav = (ele) => {
-    if (ele.status) {
-      deleteFavourites(ele.data.id);
-      dispatch(setStatusAction(ele.status));
+  const selectedfav = (data) => {
+    if (data.dataset.status) {
+      deleteFavourites(data.dataset.data.id);
     } else {
-      createFavourites(ele.data.id);
+      createFavourites(data.dataset.data.id);
     }
+    dispatch(setStatusAction(data.dataset.status));
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (isError) {
-    return (
-      <div>
-        Error!
-        {error.message}
-      </div>
-    );
-  }
-
-  if (data) {
+  if (datatest.dataset) {
     return (
       <div className="container">
         <h1>House</h1>
-        <HouseFullDetail key={`ele-${data.data.id}`} ele={data} changefav={() => selectedfav(data)} />
+        <HouseFullDetail key={`ele-${datatest.dataset.data.id}`} ele={datatest.dataset} changefav={() => selectedfav(datatest)} />
       </div>
     );
   }

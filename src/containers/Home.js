@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
 import Housetile from '../components/Housetile';
-import { selectedHouseAction, setCategoryAction } from '../actions';
+import { selectedHouseAction, setCategoryAction, setStatusAction } from '../actions';
 import CategoryFilter from '../components/Categoryfilter';
 
 const url = 'http://localhost:3000/houses';
@@ -25,10 +25,11 @@ const Home = () => {
   const {
     data, error, isError, isLoading,
   } = useQuery('houses', fetchHouses);
-    // first argument is a string to cache and track the query result
+
   const selectedHouse = (ele) => {
     localStorage.setItem('houseid', ele.id);
     dispatch(selectedHouseAction(ele));
+    dispatch(setStatusAction('we'));
   };
   const categorySelect = (ele) => dispatch(setCategoryAction(ele.value));
 
@@ -48,10 +49,11 @@ const Home = () => {
   }
 
   return (
-    <div className="container">
-      <h1>Houses</h1>
-      <div className="book_category"><CategoryFilter categorySelect={categorySelect} /></div>
-      {housetile}
+    <div className="home_container">
+      home
+      <h1 className="house_head">Houses List</h1>
+      <div className="categoryfilter"><CategoryFilter categorySelect={categorySelect} /></div>
+      <div className="house_tile slider">{housetile}</div>
     </div>
   );
 };

@@ -26,6 +26,7 @@ const initialState = {
   errormessage: '',
   errorsignin: '',
   filter: 'All',
+  status: 'we',
 };
 
 const store = createStore(
