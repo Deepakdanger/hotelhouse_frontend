@@ -50,7 +50,6 @@ const Home = () => {
 
   return (
     <div className="home_container">
-      home
       <h1 className="house_head">Houses List</h1>
       <div className="categoryfilter"><CategoryFilter categorySelect={categorySelect} /></div>
       <div className="house_tile slider">{housetile}</div>

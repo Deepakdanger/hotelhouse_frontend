@@ -5,27 +5,36 @@ import { FaStar } from 'react-icons/fa';
 
 const Housetile = ({ ele, selectHouse }) => {
   const {
-    id, title, cost, location, category,
+    title, cost, location, category,
   } = ele;
   const first1 = '/houses/';
   return (
     <div className="house_tile1 slide">
-      <Link to={first1}>
-        <button className="house_favourite" type="button" onClick={selectHouse}>{title}</button>
-      </Link>
-      {cost}
-      ,
-      {location}
-      ,
-      {id}
-      ,
-      {category}
-      <div className="star_rating">
-        <span className="checked"><FaStar /></span>
-        <span className="checked"><FaStar /></span>
-        <span className="checked"><FaStar /></span>
-        <span className="checked"><FaStar /></span>
-        <span className="unchecked"><FaStar /></span>
+      <div className="housetile_name">
+        <Link to={first1}>
+          <button className="house_favourite" type="button" onClick={selectHouse}>{title}</button>
+        </Link>
+        <div className="star_rating">
+          <span className="checked"><FaStar /></span>
+          <span className="checked"><FaStar /></span>
+          <span className="checked"><FaStar /></span>
+          <span className="checked"><FaStar /></span>
+          <span className="unchecked"><FaStar /></span>
+        </div>
+      </div>
+      <div className="cost_location">
+        $
+        <span>
+          {cost}
+        </span>
+        {'   '}
+        <span className="cost_extend"> Per Month</span>
+        <div>
+          {location}
+        </div>
+        <div className="category_extend">
+          {category}
+        </div>
       </div>
     </div>
   );
@@ -33,7 +42,6 @@ const Housetile = ({ ele, selectHouse }) => {
 
 Housetile.propTypes = {
   ele: PropTypes.shape({
-    id: PropTypes.number,
     title: PropTypes.string,
     cost: PropTypes.string,
     location: PropTypes.string,
@@ -44,7 +52,6 @@ Housetile.propTypes = {
 
 Housetile.defaultProps = {
   ele: PropTypes.shape({
-    id: 1,
     title: 'Houses',
     cost: '1122',
     location: 'india',

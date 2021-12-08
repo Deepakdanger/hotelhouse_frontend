@@ -107,7 +107,7 @@
     .home_container {
         width: 100%;
         height: auto;
-        background-color: rgb(106, 106, 190);
+        background-color: rgb(236, 236, 236);
         
         overflow: hidden;
     }
@@ -115,6 +115,11 @@
     .house_head {
         display: block;
         margin: 0 auto;
+    }
+
+    .categoryfilter {
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
     .slider {
@@ -132,6 +137,7 @@
         scroll-snap-align: start;
         scroll-behavior: smooth;
       }
+
       .house_tile {
           
         margin-top: 1rem;
@@ -142,12 +148,15 @@
 
       .house_tile1 {
           margin-right: 20rem;
-          border-right: 2px solid black;
+          border-right: 2px solid rgb(212, 212, 212);
           background-color: rgb(255, 255, 255);
-          background-image: url(https://picsum.photos/400/350);
+          background-image: url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80);
+          background-size: 100% 360px;
           background-repeat: no-repeat;
-          border-radius: 10px;
+          border-radius: 10px;        
+          align-content: flex-end;
         }
+
         .house_tile1 button {
             border: none;
             margin-top: 23rem;
@@ -168,6 +177,26 @@
         .star_rating {
             margin-left: 1.1rem;
             margin-top: 0.3rem;
+        }
+        .housetile_name {
+            float: left;
+        }
+
+        .cost_location {          
+            margin-top: 23.1rem;
+            margin-right: 1rem;
+            float: right !important;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .cost_extend {
+            color: rgb(145, 140, 140);
+            font-size: small;
+        }
+
+        .category_extend {
+            color: slategrey;
         }
 
 

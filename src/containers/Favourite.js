@@ -43,9 +43,9 @@ const Favourite = () => {
     );
   }
   return (
-    <div className="container">
-      <h1>Favourites</h1>
-      {houseTile}
+    <div className="home_container">
+      <h1 className="house_head">Favourite List</h1>
+      <div className="house_tile slider">{houseTile}</div>
     </div>
   );
 };
