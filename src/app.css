@@ -314,5 +314,112 @@
             content: "Fav" !important;
             line-height: 85px;
         }
+        .partner:after { 
+            content: "Logout"!important;
+            line-height: 70px;
+        }
+        
+        nav ul li:hover {
+            transform: translateX(-70px);
+        }
+        
+        nav ul li:hover:after {
+          opacity: 1;
+            transform: perspective(400px) rotateY(0deg) scale(1) ;
+        }
+        
+        
+        nav ul li > div {
+            display: inline-block;
+            padding: 25px 0;
+            background: transparent;
+        }
+        
+        nav ul li div { position: relative; }
+        nav ul button li div { position: relative; }
+        
+        .roof {
+            width: 0;
+            height: 0;
+            top:2px;
+            border-style: solid;
+            border-width: 0 21px 15px 21px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+        
+        .roof-edge {
+            position: absolute;
+            z-index: 20;
+            left: -17px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 17px 12px 17px;
+            border-color: transparent transparent orangered transparent;
+        }
+        /*white triangle over red triangle*/
+        .roof-edge:after {
+            position: absolute;
+            left: -14.5px;
+            top: 3px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 14.5px 10px 14.5px;
+            border-color: transparent transparent white transparent;
+        }
+        
+        .front {
+            position: relative;
+            top: 3px;
+            width: 28.5px;
+            height: 20px;
+            margin: 0 auto;
+            background: white;
+        }
+        /*door*/
+        .front:after {
+            position: absolute;
+            background: orangered;
+            width: 11px;
+            height: 13px;
+            bottom: 0;
+            left:9px;
+        }
+
+        .log-out-icon {
+            color: yellow;
+        }
+
+        .log-out-icon1 {
+            color: white;
+        }
+
+        .hamburger-nav {
+            height: 5rem;
+            border: none;
+            background: transparent;            
+        }
+        
+        .logout-nav {
+            height: 4.8rem;
+            border: none;
+            background: transparent;
+        }
+
+        .show-nav {
+            display: block;
+        }
+
+        .hide-nav {
+            display: none;
+        }
+        
+        .logout-li {
+            left: -11.3px;
+            top: -2px;
+        }
+
 
 
