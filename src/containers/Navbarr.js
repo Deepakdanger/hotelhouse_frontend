@@ -5,9 +5,10 @@ import { FaStar, FaSignOutAlt, FaHamburger } from 'react-icons/fa';
 const Navbarr = () => {
   const [isTrue, setTrue] = useState(false);
   //   const [state, setState] = useState({ sideNavLeft: false });
-  //   const signout = () => {
-  //     localStorage.setItem('token', '');
-  //   };
+  const logout = () => {
+    localStorage.setItem('token', '');
+    setTrue(false);
+  };
 
   const show = () => {
     console.log('hello22');
@@ -43,7 +44,7 @@ const Navbarr = () => {
           </li>
         </Link>
         <Link to="/">
-          <button className={isTrue ? 'show-nav logout-nav' : 'hide-nav logout-nav'} logout-nav type="button" onClick={() => show()}>
+          <button className={isTrue ? 'show-nav logout-nav' : 'hide-nav logout-nav'} logout-nav type="button" onClick={() => logout()}>
             <li className="logout-li partner">
               <div className="log-out-icon1">
                 <FaSignOutAlt size="30" />
