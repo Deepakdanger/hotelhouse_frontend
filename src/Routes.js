@@ -6,11 +6,11 @@ import Signup from './containers/Signup';
 import Favourite from './containers/Favourite';
 import Housedetails from './containers/Housedetails';
 import Homepage from './components/Homepage';
-import Navbar from './containers/Navbar';
+import Navbarr from './containers/Navbarr';
 
 const Routers = () => (
   <BrowserRouter>
-    <Navbar />
+    <Navbarr />
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/login" element={<Login />} />

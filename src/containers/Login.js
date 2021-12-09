@@ -59,7 +59,7 @@ const Login = () => {
         <div className="login_new"> LOGIN </div>
         <span className="login_error">{errormessage}</span>
         <form className="col" onSubmit={(e) => handleSubmit(e)}>
-          E - mail :-
+          E-mail Id:-
           <input className="input_user" type="text" id="title" placeholder="UserName" value={state.user} onChange={(e) => handleUserChange(e)} />
           Password:-
           <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />

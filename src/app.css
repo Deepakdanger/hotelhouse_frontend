@@ -204,12 +204,8 @@
         .housedetail_container {
             width: 100%;
             height: 550px;
-            background-color: chartreuse;
         }
 
-        .house_description {
-            
-        }
 
         .house_description_title {
             padding-top: 1rem;
@@ -240,8 +236,83 @@
         }
 
         .house_extend_title {
-            
+            font-size: medium;
+            font-weight: bold;
+            margin-top: 1rem;
+            margin-left: 1rem;
         }
 
+        .house_extend_description {
+            font-size: small;
+            color: rgb(85, 86, 87);
+            margin-left: 1rem;
+        }
+
+        .favourite_button button{
+            width: 100%;
+            height: 3rem;
+            color: white;
+            background-color: orangered;
+            float: bottom;
+            border: none;
+
+        }
+
+        *,*:before,*:after {
+            box-sizing: border-box;
+        }
+                    
+        :after {
+            content: "";
+        }
+        
+        nav {
+          float: left;
+            position: absolute;
+            top: 100px;
+            left: -48px;
+            background: transparent;
+        }
+        
+        nav ul {
+            text-align: center;
+        }
+        
+        nav ul li {
+            position: relative;
+          width: 70px;
+          left: -6px;
+          cursor: pointer;
+            background: orangered;
+            text-transform: uppercase;
+            transition:all .4s ease-out;
+        }
+        
+        
+        nav ul li:after {
+            position: absolute;
+            background: white;
+            color: orangered;
+            top:0;
+            left: 70px;
+            width: 70px; height: 100%;
+          opacity:.5;
+          transform: perspective(400px) rotateY(90deg);
+            transform-origin: 0 100%;
+            transition:all .4s ease-out;
+        }
+        
+        nav ul button li:nth-child(1):after {
+            content: "Menu";
+            line-height: 88px;
+        }
+        nav ul li:nth-child(1):after { 
+            content: "Home";
+            line-height: 88px;
+        }
+        .nav-fav:after { 
+            content: "Fav" !important;
+            line-height: 85px;
+        }
 
 

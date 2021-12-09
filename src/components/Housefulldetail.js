@@ -45,10 +45,12 @@ const HouseFullDetail = ({ ele, changefav }) => {
           About this listing
         </div>
         <div className="house_extend_description">
-          It is description.
+          It is description.Buying or building a home is one of the
+          biggest financial outlays you ll make in life, so be sure
+          to make the most informed choice.
         </div>
       </div>
-      <div>
+      <div className="favourite_button">
         <button className="house_favourite" type="button" onClick={changefav}>
           {ele.status ? 'Remove from Boookmark' : 'Bookmark'}
         </button>
