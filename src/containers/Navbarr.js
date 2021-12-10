@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FaStar, FaSignOutAlt, FaHamburger } from 'react-icons/fa';
+import { useAlert } from 'react-alert';
+import { FaStar, FaSignOutAlt, FaBars } from 'react-icons/fa';
 
 const Navbarr = () => {
   const [isTrue, setTrue] = useState(false);
+  const { currentusertoken } = useSelector((state) => state);
+  const alert = useAlert();
   //   const [state, setState] = useState({ sideNavLeft: false });
   const logout = () => {
     localStorage.setItem('token', '');
@@ -11,8 +15,13 @@ const Navbarr = () => {
   };
 
   const show = () => {
-    console.log('hello22');
-    setTrue(!isTrue);
+    if (currentusertoken !== '') {
+      console.log('hello22');
+      setTrue(!isTrue);
+    } else {
+      console.log('error');
+      alert.info('Please Sign-In');
+    }
   };
 
   console.log('hello');
@@ -22,7 +31,7 @@ const Navbarr = () => {
         <button className="hamburger-nav" type="button" onClick={() => show()}>
           <li>
             <div className="log-out-icon">
-              <FaHamburger size="30" />
+              <FaBars size="30" />
             </div>
           </li>
         </button>

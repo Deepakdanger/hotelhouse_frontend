@@ -10,7 +10,7 @@ import SetCategoryReducer from './Setcategoryreducer';
 import SetStatusReducer from './setstatusreducer';
 
 const rootReducer = combineReducers({
-  currentuser_token: SetCurrentUserTokenReducer,
+  currentusertoken: SetCurrentUserTokenReducer,
   selectedhouse: SelectedHouseReducer,
   errormessage: SetErrorReducer,
   errorsignin: SetSignErrorReducer,
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
-  currentuser_token: '',
+  currentusertoken: '',
   selectedhouse: '',
   errormessage: '',
   errorsignin: '',
