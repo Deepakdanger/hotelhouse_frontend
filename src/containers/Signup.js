@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useAlert } from 'react-alert';
 import { Link, useNavigate } from 'react-router-dom';
 import { setErrorSigninAction } from '../actions';
 
@@ -8,6 +9,7 @@ const Signup = () => {
   const { errorsignin } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const alert = useAlert();
 
   const handleNameChange = (e) => {
     setState({ ...state, name: e.target.value });
@@ -26,8 +28,10 @@ const Signup = () => {
   const authenticate = (data) => {
     if (data.check) {
       navigate('/login');
+      alert.success('Succesful Sign-Up');
     } else {
       dispatch(setErrorSigninAction(data.error));
+      alert.error('OOPS !');
     }
   };
 

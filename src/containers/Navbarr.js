@@ -8,7 +8,6 @@ const Navbarr = () => {
   const [isTrue, setTrue] = useState(false);
   const { currentusertoken } = useSelector((state) => state);
   const alert = useAlert();
-  //   const [state, setState] = useState({ sideNavLeft: false });
   const logout = () => {
     localStorage.setItem('token', '');
     setTrue(false);
@@ -16,15 +15,12 @@ const Navbarr = () => {
 
   const show = () => {
     if (currentusertoken !== '') {
-      console.log('hello22');
       setTrue(!isTrue);
     } else {
-      console.log('error');
       alert.info('Please Sign-In');
     }
   };
 
-  console.log('hello');
   return (
     <nav>
       <ul>
@@ -53,7 +49,7 @@ const Navbarr = () => {
           </li>
         </Link>
         <Link to="/">
-          <button className={isTrue ? 'show-nav logout-nav' : 'hide-nav logout-nav'} logout-nav type="button" onClick={() => logout()}>
+          <button className={isTrue ? 'show-nav logout-nav' : 'hide-nav logout-nav'} type="button" onClick={() => logout()}>
             <li className="logout-li partner">
               <div className="log-out-icon1">
                 <FaSignOutAlt size="30" />

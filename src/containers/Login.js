@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useAlert } from 'react-alert';
 import { Link, useNavigate } from 'react-router-dom';
 import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 
@@ -8,6 +9,7 @@ const Login = () => {
   const { errormessage } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const alert = useAlert();
 
   const handleUserChange = (e) => {
     setState({ ...state, user: e.target.value });
@@ -24,10 +26,13 @@ const Login = () => {
       localStorage.setItem('token', data.auth_token);
       dispatch(setCurrentTokenAction(data.auth_token));
       navigate('/app');
+      alert.success('Succesful login');
     } else if (data.error.user_authentication) {
       dispatch(setErrorLoginAction(data.error.user_authentication));
+      alert.error('OOPS !');
     } else {
       dispatch(setErrorLoginAction(data.error));
+      alert.error('OOPS !');
     }
   };
 
@@ -46,7 +51,6 @@ const Login = () => {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         authenticate(data);
       },
       () => {});
