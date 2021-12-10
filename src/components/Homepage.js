@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Homepage = () => (
   <div className="homepage">
-    <div>
-      LOGO
-    </div>
     <Link to="/login">
       <button type="button" className="slide1 homepage_login">LOGIN</button>
     </Link>

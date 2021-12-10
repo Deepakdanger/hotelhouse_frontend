@@ -26,7 +26,7 @@ const Login = () => {
       localStorage.setItem('token', data.auth_token);
       dispatch(setCurrentTokenAction(data.auth_token));
       navigate('/app');
-      alert.success('Succesful login');
+      alert.success('Successfully login');
     } else if (data.error.user_authentication) {
       dispatch(setErrorLoginAction(data.error.user_authentication));
       alert.error('OOPS !');
