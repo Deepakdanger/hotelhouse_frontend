@@ -9,9 +9,20 @@ const Homepage = () => (
     <Link to="/signup">
       <button type="button" className="slide1 homepage_signup">SIGN UP</button>
     </Link>
-    <div className="homepage_house">
-      Search Houses &rarr;
+    <div className="cover-page">
+      Perfect Place to find
     </div>
+    <div className="cover-page">
+      home for yourself
+    </div>
+    <div className="cover-page">
+      &amp; family.
+    </div>
+    <Link to="/signup">
+      <div className="homepage_house">
+        Search Houses &rarr;
+      </div>
+    </Link>
   </div>
 );
 

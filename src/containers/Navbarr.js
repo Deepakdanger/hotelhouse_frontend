@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import { FaStar, FaSignOutAlt, FaBars } from 'react-icons/fa';
 
 const Navbarr = () => {
   const [isTrue, setTrue] = useState(false);
-  const { currentusertoken } = useSelector((state) => state);
   const alert = useAlert();
   const logout = () => {
     localStorage.setItem('token', '');
@@ -14,7 +12,7 @@ const Navbarr = () => {
   };
 
   const show = () => {
-    if (currentusertoken !== '') {
+    if (localStorage.getItem('token') !== '') {
       setTrue(!isTrue);
     } else {
       alert.info('Please Sign-In');
@@ -23,6 +21,9 @@ const Navbarr = () => {
 
   return (
     <nav>
+      <div className="website-name">
+        Perfect
+      </div>
       <ul>
         <button className="hamburger-nav" type="button" onClick={() => show()}>
           <li>

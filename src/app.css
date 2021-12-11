@@ -1,14 +1,26 @@
 /* @media only screen and (max-width: 768px) {
     For mobile phones: */
     .homepage {
-        height: 35rem;
-        background-color: cadetblue;
+        width: 100%;
+        height: 40rem;
+        background-image: url('https://images.adsttc.com/media/images/527c/0684/e8e4/4ef0/0400/019a/large_jpg/LPA_WATERFRONT_AT_DUSK_(LUXIGON).jpg?1383859827');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-top: -2%;
+    }
+
+    .cover-page {
+        color: rgb(180, 180, 180);
+        font-size: 5rem;
+        margin-left: 8rem;
+        margin-top: 2rem;
+
     }
 
     .slide1 {
         height: 2rem;
         width: 8rem;
-        background-color: chocolate;
+        background-color: orangered;
         color: white;
         border: 2px chocolate solid;
         border-radius: 5px;
@@ -17,16 +29,17 @@
     }
 
     .homepage_house {
-        height: 2rem;
-        width: 8rem;
-        background-color: chocolate;
+        height: 3rem;
+        width: 12rem;
+        background-color: orangered;
         color: white;
-        border: 2px chocolate solid;
+        border: 2px orangered solid;
         border-radius: 5px;
         position: absolute;
-        top: 50%;
-        left: 38%;
+        top: 60%;
+        left: 35%;
         padding-top: 0.5rem;
+        font-size: 1.5rem;
     }
 
     .login_page {
@@ -47,7 +60,7 @@
 
     .login_new {
         margin-left: 34%;
-        color: rgb(255, 123, 0);
+        color: orangered;
         font-size: 2rem;
         font-weight: bolder;
     }
@@ -256,6 +269,18 @@
             float: bottom;
             border: none;
 
+        }
+
+        .website-name {
+            height: 4rem;
+            width: 9rem;
+            background-color: orangered;
+            position: absolute;
+            top: -45px;
+            left: 48px;
+            color: white;
+            font-size: 2.5rem;
+            
         }
 
         *,*:before,*:after {
@@ -560,5 +585,15 @@
               background-color: orchid;
           }
 
+          @media only screen and (max-width: 768px) {
+              .cover-page {
+                font-size: xx-large;
+              }
+
+              .homepage {
+                  height: 50rem;
+              }
+
+            }
 
 

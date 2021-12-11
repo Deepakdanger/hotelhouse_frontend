@@ -68,11 +68,11 @@ const Signup = () => {
           <p>{ errorsignin[3] }</p>
         </div>
         <form className="col" onSubmit={(e) => handleSubmit(e)}>
-          Username :-
+          Username:
           <input className="input_name" type="text" id="title" placeholder="UserName" value={state.name} onChange={(e) => handleNameChange(e)} />
-          Email Id:-
+          EmailId:
           <input className="input_user" type="text" id="title" placeholder="E-mail" value={state.user} onChange={(e) => handleUserChange(e)} />
-          Password :-
+          Password:
           <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
           <button className="submit_login" type="submit">Sign up</button>
         </form>
