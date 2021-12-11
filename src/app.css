@@ -1,599 +1,614 @@
 /* @media only screen and (max-width: 768px) {
     For mobile phones: */
-    .homepage {
-        width: 100%;
-        height: 40rem;
-        background-image: url('https://images.adsttc.com/media/images/527c/0684/e8e4/4ef0/0400/019a/large_jpg/LPA_WATERFRONT_AT_DUSK_(LUXIGON).jpg?1383859827');
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        margin-top: -2%;
-    }
+.homepage {
+  width: 100%;
+  height: 40rem;
+  background-image: url('https://images.adsttc.com/media/images/527c/0684/e8e4/4ef0/0400/019a/large_jpg/LPA_WATERFRONT_AT_DUSK_(LUXIGON).jpg?1383859827');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: -2%;
+}
 
-    .cover-page {
-        color: rgb(180, 180, 180);
-        font-size: 5rem;
-        margin-left: 8rem;
-        margin-top: 2rem;
+.cover-page {
+  color: rgb(180, 180, 180);
+  font-size: 5rem;
+  margin-left: 8rem;
+  margin-top: 2rem;
+}
 
-    }
+.slide1 {
+  height: 2rem;
+  width: 8rem;
+  background-color: orangered;
+  color: white;
+  border: 2px chocolate solid;
+  border-radius: 5px;
+  float: right;
+  margin: 5px;
+}
 
-    .slide1 {
-        height: 2rem;
-        width: 8rem;
-        background-color: orangered;
-        color: white;
-        border: 2px chocolate solid;
-        border-radius: 5px;
-        float: right;
-        margin: 5px;
-    }
+.homepage_house {
+  height: 3rem;
+  width: 12rem;
+  background-color: orangered;
+  color: white;
+  border: 2px orangered solid;
+  border-radius: 5px;
+  position: absolute;
+  top: 60%;
+  left: 35%;
+  padding-top: 0.5rem;
+  font-size: 1.5rem;
+}
 
-    .homepage_house {
-        height: 3rem;
-        width: 12rem;
-        background-color: orangered;
-        color: white;
-        border: 2px orangered solid;
-        border-radius: 5px;
-        position: absolute;
-        top: 60%;
-        left: 35%;
-        padding-top: 0.5rem;
-        font-size: 1.5rem;
-    }
+.login_page {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  height: 40rem;
+  color: rgb(245, 245, 245);
+}
 
-    .login_page {
-        background-color: rgb(245, 245, 245);
-        width: 100%;
-        height: 40rem;
-        color: rgb(245, 245, 245);
-    }
+.login_block {
+  margin: auto auto;
+  width: 60%;
+  margin-top: 5rem;
+  background-color: rgb(255, 255, 255);
+  height: auto;
+  border: 2px solid rgb(219, 219, 219);
+}
 
-    .login_block {
-        margin: auto auto;
-        width: 60%;
-        margin-top: 5rem;
-        background-color: rgb(255, 255, 255);
-        height: auto;
-        border: 2px solid rgb(219, 219, 219);
-    }
+.login_new {
+  margin-left: 34%;
+  color: orangered;
+  font-size: 2rem;
+  font-weight: bolder;
+}
 
-    .login_new {
-        margin-left: 34%;
-        color: orangered;
-        font-size: 2rem;
-        font-weight: bolder;
-    }
+.login_error {
+  color: red !important;
+  margin-left: 1rem;
+}
 
-    .login_error {
-        color: red !important;
-        margin-left: 1rem;
-    }
-    .col {
-        color: black !important;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
-        font-size: 16px;         
-        margin-left: 1rem;
-    }
+.col {
+  color: black !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 1rem;
+}
 
-    .login_block form input{
-        width: 90%;
-        margin-top: 0.25rem;
-        margin-bottom: 0.5rem;
-        margin-right: 2rem;
-        height: 2.5rem;
-        border: 1px solid rgb(236, 236, 236);
-    }
-     
-    .login_block form button {
-        width: 92%;
-        height: 2.3rem;
-        background-color: rgb(255, 123, 0);
-        color: white;
-        border: none;
-        border-radius: 100px;
-        margin-top: 1.5rem;
-    }
+.login_block form input {
+  width: 90%;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  height: 2.5rem;
+  border: 1px solid rgb(236, 236, 236);
+}
 
-    .backpage {
-        margin-top: 2rem;
-        align-content: flex-end;
-        align-content: space-between;
-    }
+.house_tile1 button {
+  border: none;
+  margin-top: 23rem;
+  margin-left: 1rem;
+  font-size: larger;
+  font-weight: bolder;
+  background-color: rgb(255, 255, 255);
+}
 
-    .backpage a {
-        color: rgb(255, 123, 0);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-weight: bolder;
-        text-decoration: none; 
-    } 
+.favourite_button button {
+  width: 100%;
+  height: 3rem;
+  color: white;
+  background-color: orangered;
+  border: none;
+}
 
-    .login_sign_up {
-        float: right;
-    }
+.login_block form button {
+  width: 92%;
+  height: 2.3rem;
+  background-color: rgb(255, 123, 0);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  margin-top: 1.5rem;
+}
 
-    .backpage1 {
-        float: left;
-    }
+.backpage {
+  margin-top: 2rem;
+  align-content: flex-end;
+  align-content: space-between;
+}
 
-    .home_container {
-        width: 100%;
-        height: auto;
-        background-color: rgb(236, 236, 236);
-        
-        overflow: hidden;
-    }
+.backpage a {
+  color: rgb(255, 123, 0);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+  text-decoration: none;
+}
 
-    .house_head {
-        display: block;
-        margin: 0 auto;
-    }
+.login_sign_up {
+  float: right;
+}
 
-    .categoryfilter {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
+.backpage1 {
+  float: left;
+}
 
-    .slider {
-        width: 100%;
-        height: 450px;
-        display: flex;
-        overflow-x: hidden;
-        scroll-snap-type: x mandatory;  
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      .slide {
-        width: 80%;
-        flex-shrink: 0;
-        height: 100%;
-        scroll-snap-align: start;
-        scroll-behavior: smooth;
-      }
+.home_container {
+  width: 100%;
+  height: auto;
+  background-color: rgb(236, 236, 236);
+  overflow: hidden;
+}
 
-      .house_tile {
-          
-        margin-top: 1rem;
-        margin-left: 3rem;
-        margin-bottom: 3rem;
+.house_head {
+  display: block;
+  margin: 0 auto;
+}
 
-      }
+.categoryfilter {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 
-      .house_tile1 {
-          margin-right: 20rem;
-          border-right: 2px solid rgb(212, 212, 212);
-          background-color: rgb(255, 255, 255);
-          background-image: url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80);
-          background-size: 100% 360px;
-          background-repeat: no-repeat;
-          border-radius: 10px;
-          align-content: flex-end;
-        }
+.slider {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
 
-        .house_tile1 button {
-            border: none;
-            margin-top: 23rem;
-            margin-left: 1rem;
-            font-size: larger;
-            font-weight: bolder;
-            background-color: rgb(255, 255, 255);
-        }
+.slide {
+  width: 80%;
+  flex-shrink: 0;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
 
-        .checked {
-            color: yellow;            
-        }
+.house_tile {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
 
-        .unchecked {
-            color: rgb(182, 178, 178);            
-        }
+.house_tile1 {
+  margin-right: 20rem;
+  border-right: 2px solid rgb(212, 212, 212);
+  background-color: rgb(255, 255, 255);
+  background-image: url(https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80);
+  background-size: 100% 360px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  align-content: flex-end;
+}
 
-        .star_rating {
-            margin-left: 1.1rem;
-            margin-top: 0.3rem;
-        }
-        .housetile_name {
-            float: left;
-        }
+.checked {
+  color: yellow;
+}
 
-        .cost_location {          
-            margin-top: 23.1rem;
-            margin-right: 1rem;
-            float: right !important;
-            font-size: large;
-            font-weight: bold;
-        }
+.unchecked {
+  color: rgb(182, 178, 178);
+}
 
-        .cost_extend {
-            color: rgb(145, 140, 140);
-            font-size: small; 
-        }
+.star_rating {
+  margin-left: 1.1rem;
+  margin-top: 0.3rem;
+}
 
-        .category_extend {
-            color: slategrey;
-        }
+.housetile_name {
+  float: left;
+}
 
-        .housedetail_container {
-            width: 100%;
-            height: 550px;
-        }
+.cost_location {
+  margin-top: 23.1rem;
+  margin-right: 1rem;
+  float: right !important;
+  font-size: large;
+  font-weight: bold;
+}
 
+.cost_extend {
+  color: rgb(145, 140, 140);
+  font-size: small;
+}
 
-        .house_description_title {
-            padding-top: 1rem;
-            font-size: larger;
-            text-align: center;
-        }
+.category_extend {
+  color: slategrey;
+}
 
-        .house_image {
-            width: 100%;
-            height: 400px;
-            background-color: cyan;
-        }
+.housedetail_container {
+  width: 100%;
+  height: 550px;
+}
 
-        .house_name_rating {
-            padding-top: 20rem;
-            padding-left: 1rem;
-            font-size: larger;
-            font-weight: bolder;
-            float: left;
-        }
+.house_description_title {
+  padding-top: 1rem;
+  font-size: larger;
+  text-align: center;
+}
 
-        .cost_location1 {          
-            padding-top: 20.1rem;
-            margin-right: 1rem;
-            float: right;
-            font-size: large;
-            font-weight: bold;
-        }
+.house_image {
+  width: 100%;
+  height: 400px;
+  background-color: cyan;
+}
 
-        .house_extend_title {
-            font-size: medium;
-            font-weight: bold;
-            margin-top: 1rem;
-            margin-left: 1rem;
-        }
+.house_name_rating {
+  padding-top: 20rem;
+  padding-left: 1rem;
+  font-size: larger;
+  font-weight: bolder;
+  float: left;
+}
 
-        .house_extend_description {
-            font-size: small;
-            color: rgb(85, 86, 87);
-            margin-left: 1rem;
-        }
+.cost_location1 {
+  padding-top: 20.1rem;
+  margin-right: 1rem;
+  float: right;
+  font-size: large;
+  font-weight: bold;
+}
 
-        .favourite_button button{
-            width: 100%;
-            height: 3rem;
-            color: white;
-            background-color: orangered;
-            float: bottom;
-            border: none;
+.house_extend_title {
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
 
-        }
+.house_extend_description {
+  font-size: small;
+  color: rgb(85, 86, 87);
+  margin-left: 1rem;
+}
 
-        .website-name {
-            height: 4rem;
-            width: 9rem;
-            background-color: orangered;
-            position: absolute;
-            top: -45px;
-            left: 48px;
-            color: white;
-            font-size: 2.5rem;
-            
-        }
+.website-name {
+  height: 4rem;
+  width: 9rem;
+  background-color: orangered;
+  position: absolute;
+  top: -45px;
+  left: 48px;
+  color: white;
+  font-size: 2.5rem;
+}
 
-        *,*:before,*:after {
-            box-sizing: border-box;
-        }
-                    
-        :after {
-            content: "";
-        }
-        
-        nav {
-          float: left;
-            position: absolute;
-            top: 100px;
-            left: -48px;
-            background: transparent;
-        }
-        
-        nav ul {
-            text-align: center;
-        }
-        
-        nav ul li {
-            position: relative;
-          width: 70px;
-          left: -6px;
-          cursor: pointer;
-            background: orangered;
-            text-transform: uppercase;
-            transition:all .4s ease-out;
-        }
-        
-        
-        nav ul li:after {
-            position: absolute;
-            background: white;
-            color: orangered;
-            top:0;
-            left: 70px;
-            width: 70px; height: 100%;
-          opacity:.5;
-          transform: perspective(400px) rotateY(90deg);
-            transform-origin: 0 100%;
-            transition:all .4s ease-out;
-        }
-        
-        nav ul button li:nth-child(1):after {
-            content: "Menu";
-            line-height: 88px;
-        }
-        nav ul li:nth-child(1):after { 
-            content: "Home";
-            line-height: 88px;
-        }
-        .nav-fav:after { 
-            content: "Fav" !important;
-            line-height: 85px;
-        }
-        .partner:after { 
-            content: "Logout"!important;
-            line-height: 70px;
-        }
-        
-        nav ul li:hover {
-            transform: translateX(-70px);
-        }
-        
-        nav ul li:hover:after {
-          opacity: 1;
-            transform: perspective(400px) rotateY(0deg) scale(1) ;
-        }
-        
-        
-        nav ul li > div {
-            display: inline-block;
-            padding: 25px 0;
-            background: transparent;
-        }
-        
-        nav ul li div { position: relative; }
-        nav ul button li div { position: relative; }
-        
-        .roof {
-            width: 0;
-            height: 0;
-            top:2px;
-            border-style: solid;
-            border-width: 0 21px 15px 21px;
-            border-color: transparent transparent #ffffff transparent;
-        }
-        
-        .roof-edge {
-            position: absolute;
-            z-index: 20;
-            left: -17px;
-            top: 3px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 17px 12px 17px;
-            border-color: transparent transparent orangered transparent;
-        }
-        /*white triangle over red triangle*/
-        .roof-edge:after {
-            position: absolute;
-            left: -14.5px;
-            top: 3px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 14.5px 10px 14.5px;
-            border-color: transparent transparent white transparent;
-        }
-        
-        .front {
-            position: relative;
-            top: 3px;
-            width: 28.5px;
-            height: 20px;
-            margin: 0 auto;
-            background: white;
-        }
-        /*door*/
-        .front:after {
-            position: absolute;
-            background: orangered;
-            width: 11px;
-            height: 13px;
-            bottom: 0;
-            left:9px;
-        }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-        .log-out-icon {
-            color: white;
-        }
+::after {
+  content: "";
+}
 
-        .log-out-icon1 {
-            color: white;
-        }
+nav {
+  float: left;
+  position: absolute;
+  top: 100px;
+  left: -48px;
+  background: transparent;
+}
 
-        .hamburger-nav {
-            height: 5rem;
-            border: none;
-            background: transparent;            
-        }
-        
-        .logout-nav {
-            height: 4.8rem;
-            border: none;
-            background: transparent;
-        }
+nav ul {
+  text-align: center;
+}
 
-        .show-nav {
-            display: block;
-        }
+nav ul li {
+  position: relative;
+  width: 70px;
+  left: -6px;
+  cursor: pointer;
+  background: orangered;
+  text-transform: uppercase;
+  transition: all 0.4s ease-out;
+}
 
-        .hide-nav {
-            display: none;
-        }
-        
-        .logout-li {
-            left: -11.3px;
-            top: -2px;
-        }
+nav ul li::after {
+  position: absolute;
+  background: white;
+  color: orangered;
+  top: 0;
+  left: 70px;
+  width: 70px;
+  height: 100%;
+  opacity: 0.5;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: 0 100%;
+  transition: all 0.4s ease-out;
+}
 
-        .show-alert {
-            display: block;
-        }
+nav ul li:nth-child(1)::after {
+  content: "Home";
+  line-height: 88px;
+}
 
-        .hide-alert {
-            display: none;
-        }
+nav ul li:hover::after {
+  opacity: 1;
+  transform: perspective(400px) rotateY(0deg) scale(1);
+}
 
-        .alert_page {
-            animation: cssAnimation 5s forwards;
-        }
+nav ul button li:nth-child(1)::after {
+  content: "Menu";
+  line-height: 88px;
+}
 
-        @keyframes cssAnimation {
-            0%   {opacity: 1;}
-            90%  {opacity: 1;}
-            100% {opacity: 0;}
-        }
-        @-webkit-keyframes cssAnimation {
-            0%   {opacity: 1;}
-            90%  {opacity: 1;}
-            100% {opacity: 0;}
-        }
+.nav-fav::after {
+  content: "Fav" !important;
+  line-height: 85px;
+}
 
-        @keyframes slide {
-            0% {
-              background-position: 0 0;
-            }
-            100% {
-              background-position: -120px 60px;
-            }
-          }
-          
-          .InfoBanner{
-            margin-bottom: 10px;
-            position: absolute;
-            left: -15px;
-            top: 115px;
-            text-align: center;
-            width: 100%;
-          }
-          
-          .reversed {
-            display: inline-block;
-            padding: 0.3em;
-            padding-left: 0.3em;
-            margin-left: 0.8em;
-            position: relative;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 1;
-            color: #fff;
-            font-size: 15px;
-            background-color:#ef5350;
-          }
-          .reversed:before, .reversed:after {
-            content: '';
-            width: 0;
-            height: 0;
-            right: -0.8em;
-            position: absolute;
-            top: 0;
-            border-top: 0.8em solid #ef5350;
-          }
-          .reversed:after {
-            top: auto;
-            bottom: 0;
-            border-top: none;
-            border-bottom: 0.8em solid #ef5350;
-          }
-          .reversedRight:before, .reversedRight:after{
-            border-right: 0.8em solid transparent;
-            right: -0.8em;
-          }
-          .reversedRight{
-            width: 17px;
-            border-radius: 5px 0px 0px 5px;
-            animation: tilt 2s infinite;
-          }
-          @keyframes tilt {
-            0% {
-              left: 0%;
-            }
-            50% {
-              left: 9px;
-            }
-            100% {
-              left: 0px;
-            }
-          }
-          .reversedLeft{
-            margin-left:15px;
-            border-radius: 0px 5px 5px 0px;
-          }
-          .reversedLeft:before, .reversedLeft:after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 0.8em solid transparent;
-            left: -0.8em;
-            position: absolute;
-          }
-          .reversedLeft:after {
-            top: auto;
-            bottom: 0;
-            border-top: 0.8em solid #ef5350;
-            border-bottom: none;
-          }
-          .reversedLeft:before {
-            bottom: auto;
-            top:0;
-            border-bottom: 0.8em solid #ef5350;
-            border-top: none;
-          }
-          
-          .bgAnimation{
-            background-color:#ef5350;
-            background-image: linear-gradient(
-              45deg,
-              #e57373 25%,
-              transparent 25%,
-              transparent 75%,
-              #e57373 75%,
-              #e57373
-            ),linear-gradient(
-              -45deg,
-              #e57373 25%,
-              transparent 25%,
-              transparent 75%,
-              #e57373 75%,
-              #e57373
-            );
-            background-size: 60px 60px;
-            animation: slide 4s infinite linear;
-          }
+.partner::after {
+  content: "Logout" !important;
+  line-height: 70px;
+}
 
-          .red-bg {
-              background-color: orchid;
-          }
+nav ul li:hover {
+  transform: translateX(-70px);
+}
 
-          @media only screen and (max-width: 768px) {
-              .cover-page {
-                font-size: xx-large;
-              }
+nav ul li > div {
+  display: inline-block;
+  padding: 25px 0;
+  background: transparent;
+}
 
-              .homepage {
-                  height: 50rem;
-              }
+nav ul li div { position: relative; }
+nav ul button li div { position: relative; }
 
-            }
+.roof {
+  width: 0;
+  height: 0;
+  top: 2px;
+  border-style: solid;
+  border-width: 0 21px 15px 21px;
+  border-color: transparent transparent #fff transparent;
+}
 
+.roof-edge {
+  position: absolute;
+  z-index: 20;
+  left: -17px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 17px 12px 17px;
+  border-color: transparent transparent orangered transparent;
+}
 
+/* white triangle over red triangle */
+.roof-edge::after {
+  position: absolute;
+  left: -14.5px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14.5px 10px 14.5px;
+  border-color: transparent transparent white transparent;
+}
+
+.front {
+  position: relative;
+  top: 3px;
+  width: 28.5px;
+  height: 20px;
+  margin: 0 auto;
+  background: white;
+}
+
+/* door */
+.front::after {
+  position: absolute;
+  background: orangered;
+  width: 11px;
+  height: 13px;
+  bottom: 0;
+  left: 9px;
+}
+
+.log-out-icon {
+  color: white;
+}
+
+.log-out-icon1 {
+  color: white;
+}
+
+.hamburger-nav {
+  height: 5rem;
+  border: none;
+  background: transparent;
+}
+
+.logout-nav {
+  height: 4.8rem;
+  border: none;
+  background: transparent;
+}
+
+.show-nav {
+  display: block;
+}
+
+.hide-nav {
+  display: none;
+}
+
+.logout-li {
+  left: -11.3px;
+  top: -2px;
+}
+
+.show-alert {
+  display: block;
+}
+
+.hide-alert {
+  display: none;
+}
+
+.alert_page {
+  animation: cssAnimation 5s forwards;
+}
+
+@keyframes cssAnimation {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes cssAnimation {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -120px 60px;
+  }
+}
+
+.InfoBanner {
+  margin-bottom: 10px;
+  position: absolute;
+  left: -15px;
+  top: 115px;
+  text-align: center;
+  width: 100%;
+}
+
+.reversed {
+  display: inline-block;
+  padding: 0.3em;
+  padding-left: 0.3em;
+  margin-left: 0.8em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  color: #fff;
+  font-size: 15px;
+  background-color: #ef5350;
+}
+
+.reversed::before,
+.reversed::after {
+  content: '';
+  width: 0;
+  height: 0;
+  right: -0.8em;
+  position: absolute;
+  top: 0;
+  border-top: 0.8em solid #ef5350;
+}
+
+.reversed::after {
+  top: auto;
+  bottom: 0;
+  border-top: none;
+  border-bottom: 0.8em solid #ef5350;
+}
+
+.reversedRight::before,
+.reversedRight::after {
+  border-right: 0.8em solid transparent;
+  right: -0.8em;
+}
+
+.reversedRight {
+  width: 17px;
+  border-radius: 5px 0 0 5px;
+  animation: tilt 2s infinite;
+}
+
+@keyframes tilt {
+  0% {
+    left: 0%;
+  }
+
+  50% {
+    left: 9px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.reversedLeft {
+  margin-left: 15px;
+  border-radius: 0 5px 5px 0;
+}
+
+.reversedLeft::before,
+.reversedLeft::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.8em solid transparent;
+  left: -0.8em;
+  position: absolute;
+}
+
+.reversedLeft::after {
+  top: auto;
+  bottom: 0;
+  border-top: 0.8em solid #ef5350;
+  border-bottom: none;
+}
+
+.reversedLeft::before {
+  bottom: auto;
+  top: 0;
+  border-bottom: 0.8em solid #ef5350;
+  border-top: none;
+}
+
+.bgAnimation {
+  background-color: #ef5350;
+  background-image:
+    linear-gradient(
+      45deg,
+      #e57373 25%,
+      transparent 25%,
+      transparent 75%,
+      #e57373 75%,
+      #e57373
+    ),
+    linear-gradient(
+      -45deg,
+      #e57373 25%,
+      transparent 25%,
+      transparent 75%,
+      #e57373 75%,
+      #e57373
+    );
+  background-size: 60px 60px;
+  animation: slide 4s infinite linear;
+}
+
+.red-bg {
+  background-color: orchid;
+}
+
+@media only screen and (max-width: 768px) {
+  .cover-page {
+    font-size: xx-large;
+  }
+
+  .homepage {
+    height: 50rem;
+  }
+}
