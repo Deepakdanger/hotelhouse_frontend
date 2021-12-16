@@ -22,7 +22,7 @@ const Navbarr = () => {
   return (
     <nav>
       <div className="website-name">
-        Perfect
+        InHome
       </div>
       <ul>
         <button className="hamburger-nav" type="button" onClick={() => show()}>
