@@ -10,8 +10,8 @@ const Housedetails = () => {
 
   const dispatch = useDispatch();
 
-  const url = 'http://localhost:3000/houses/';
-  const urll = 'http://localhost:3000/favourites/';
+  const url = 'https://floating-harbor-48342.herokuapp.com/houses/';
+  const urll = 'https://floating-harbor-48342.herokuapp.com/favourites/';
 
   const deleteFavourites = (id) => {
     fetch((`${urll}/1`), {

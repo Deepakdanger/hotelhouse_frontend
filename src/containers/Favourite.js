@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Housetile from '../components/Housetile';
 import { selectedHouseAction, setStatusAction } from '../actions';
 
-const url = 'http://localhost:3000/favourites';
+const url = 'https://floating-harbor-48342.herokuapp.com/favourites';
 
 const fetchHouses = () => fetch(url, {
   method: 'GET',

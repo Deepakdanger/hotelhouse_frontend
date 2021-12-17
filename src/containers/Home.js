@@ -5,7 +5,7 @@ import Housetile from '../components/Housetile';
 import { selectedHouseAction, setCategoryAction, setStatusAction } from '../actions';
 import CategoryFilter from '../components/Categoryfilter';
 
-const url = 'http://localhost:3000/houses';
+const url = 'https://floating-harbor-48342.herokuapp.com/houses';
 
 const fetchHouses = () => fetch(url, {
   method: 'GET',

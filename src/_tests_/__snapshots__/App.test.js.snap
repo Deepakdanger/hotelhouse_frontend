@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing App with redux App.js snapshot testing 1`] = `
+<div
+  className="app"
+>
+  <div>
+    Loading...
+  </div>
+</div>
+`;

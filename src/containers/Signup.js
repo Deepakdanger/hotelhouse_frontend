@@ -23,7 +23,7 @@ const Signup = () => {
     setState({ ...state, password: e.target.value });
   };
 
-  const url = 'http://localhost:3000/users';
+  const url = 'https://floating-harbor-48342.herokuapp.com/users';
 
   const authenticate = (data) => {
     if (data.check) {
