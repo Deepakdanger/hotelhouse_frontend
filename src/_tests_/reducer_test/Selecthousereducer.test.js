@@ -8,7 +8,7 @@ describe('SelectedHouseReducer function', () => {
     expect(SelectedHouseReducer(undefined, action)).toEqual(initialState);
   });
 
-  it('should handle SELECT_CATEGORY', () => {
+  it('should handle SELECTED_HOUSE', () => {
     const action = {
       type: SELECTED_HOUSE,
       ele: { id: '1' },
