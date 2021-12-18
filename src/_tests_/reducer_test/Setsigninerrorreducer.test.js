@@ -8,7 +8,7 @@ describe('SetSignErrorReducer function', () => {
     expect(SetSignErrorReducer(undefined, action)).toEqual(initialState);
   });
 
-  it('should handle SELECT_CATEGORY', () => {
+  it('should handle SET_ERROR_SIGNIN', () => {
     const action = {
       type: SET_ERROR_SIGNIN,
       ele: 'Invalid',
