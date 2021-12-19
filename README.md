@@ -13,12 +13,20 @@ Here I've used different animation in CSS to improve my website UI framework.
 - React
 - Redux
 - CSS Bootstrap
+- Rails
+- Ruby
 
 ## Live Demo
 
 Click on the link below for accessing the deployed website.
 ### [In-Home Website](https://thirsty-wescoff-f34d62.netlify.app/)</p>
 
+Backend
+
+### [Github-In-Home-BAckend ](https://github.com/Deepakdanger/hotelhouse_backend)</p>
+
+In-Home
+### [In-Home Website-BAckend ](https://floating-harbor-48342.herokuapp.com/)</p>
 
 ## Getting Started
 
