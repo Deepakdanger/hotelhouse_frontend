@@ -36,6 +36,19 @@ export const fetchHouses = () => fetch('https://floating-harbor-48342.herokuapp.
   .then((data) => data,
     () => {
     });
+
+export const fetchFavourites = () => fetch('https://floating-harbor-48342.herokuapp.com/favourites', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+})
+  .then((resp) => resp.json())
+  .then((data) => data,
+    () => {
+    });
+
 export const signinAPI = () => {
   console.log('hello');
 };

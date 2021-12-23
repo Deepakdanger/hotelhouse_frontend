@@ -3,27 +3,14 @@ import { useQuery } from 'react-query';
 import { useDispatch } from 'react-redux';
 import Housetile from '../components/Housetile';
 import { selectedHouseAction, setStatusAction } from '../actions';
-
-const url = 'https://floating-harbor-48342.herokuapp.com/favourites';
-
-const fetchHouses = () => fetch(url, {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: localStorage.getItem('token'),
-  },
-})
-  .then((resp) => resp.json())
-  .then((data) => data,
-    () => {
-    });
+import { fetchFavourites } from '../API';
 
 const Favourite = () => {
   const dispatch = useDispatch();
 
   const {
     data, error, isError, isLoading,
-  } = useQuery('favourites', fetchHouses);
+  } = useQuery('favourites', fetchFavourites);
   const selectedHouse = (ele) => {
     localStorage.setItem('houseid', ele.id);
     dispatch(selectedHouseAction(ele));
