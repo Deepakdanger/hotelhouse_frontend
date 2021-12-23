@@ -1,6 +1,6 @@
 export const SET_CURRENT_TOKEN = 'SET_CURRENT_TOKEN';
 export const SET_ERROR_LOGIN = 'SET_ERROR_LOGIN';
-export const SET_ERROR_SIGNIN = 'SET_ERROR_SIGNIN';
+export const SET_ERROR_SIGNUP = 'SET_ERROR_SIGNUP';
 export const SELECTED_HOUSE = 'SELECTED_HOUSE';
 export const SELECTED_CATEGORY = 'SELECTED_CATEGORY';
 export const SET_STATUS = 'SET_STATUS';
@@ -20,8 +20,8 @@ export const setErrorLoginAction = (ele) => ({
   ele,
 });
 
-export const setErrorSigninAction = (ele) => ({
-  type: SET_ERROR_SIGNIN,
+export const setErrorSignupAction = (ele) => ({
+  type: SET_ERROR_SIGNUP,
   ele,
 });
 

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useAlert } from 'react-alert';
 import { Link, useNavigate } from 'react-router-dom';
-import { setErrorSigninAction } from '../actions';
+import { setErrorSignupAction } from '../actions';
 import { signinApi } from '../API';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [user, setUser] = useState('');
   const [password, usePassword] = useState('');
-  const { errorsignin } = useSelector((state) => state);
+  const { errorsignup } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const alert = useAlert();
@@ -31,7 +31,7 @@ const Signup = () => {
       navigate('/login');
       alert.success('Succesful Sign-Up');
     } else {
-      dispatch(setErrorSigninAction(data.error));
+      dispatch(setErrorSignupAction(data.error));
       alert.error('OOPS !');
     }
   };
@@ -50,10 +50,10 @@ const Signup = () => {
       <div className="login_block">
         <div className="login_new"> SIGN UP </div>
         <div className="login_error">
-          <p>{ errorsignin[0] }</p>
-          <p>{ errorsignin[1] }</p>
-          <p>{ errorsignin[2] }</p>
-          <p>{ errorsignin[3] }</p>
+          <p>{ errorsignup[0] }</p>
+          <p>{ errorsignup[1] }</p>
+          <p>{ errorsignup[2] }</p>
+          <p>{ errorsignup[3] }</p>
         </div>
         <form className="col" onSubmit={(e) => handleSubmit(e)}>
           Username:

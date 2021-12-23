@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   currentusertoken: SetCurrentUserTokenReducer,
   selectedhouse: SelectedHouseReducer,
   errormessage: SetErrorReducer,
-  errorsignin: SetSignErrorReducer,
+  errorsignup: SetSignErrorReducer,
   filter: SetCategoryReducer,
   status: SetStatusReducer,
 });
@@ -24,7 +24,7 @@ const initialState = {
   currentusertoken: '',
   selectedhouse: '',
   errormessage: '',
-  errorsignin: '',
+  errorsignup: '',
   filter: 'All',
   status: 'we',
 };
