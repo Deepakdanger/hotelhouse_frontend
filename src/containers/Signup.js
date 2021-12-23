@@ -6,22 +6,24 @@ import { setErrorSigninAction } from '../actions';
 import { signinApi } from '../API';
 
 const Signup = () => {
-  const [state, setState] = useState({ name: '', user: '', password: '' });
+  const [name, setName] = useState('');
+  const [user, setUser] = useState('');
+  const [password, usePassword] = useState('');
   const { errorsignin } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const alert = useAlert();
 
   const handleNameChange = (e) => {
-    setState({ ...state, name: e.target.value });
+    setName(e.target.value);
   };
 
   const handleUserChange = (e) => {
-    setState({ ...state, user: e.target.value });
+    setUser(e.target.value);
   };
 
   const handlePassChange = (e) => {
-    setState({ ...state, password: e.target.value });
+    usePassword(e.target.value);
   };
 
   const authenticate = (data) => {
@@ -36,7 +38,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signinApi(state.name, state.user, state.password)
+    signinApi(name, user, password)
       .then((data) => {
         authenticate(data);
       });
@@ -55,11 +57,11 @@ const Signup = () => {
         </div>
         <form className="col" onSubmit={(e) => handleSubmit(e)}>
           Username:
-          <input className="input_name" type="text" id="title" placeholder="UserName" value={state.name} onChange={(e) => handleNameChange(e)} />
+          <input className="input_name" type="text" id="title" placeholder="UserName" value={name} onChange={(e) => handleNameChange(e)} />
           EmailId:
-          <input className="input_user" type="text" id="title" placeholder="E-mail" value={state.user} onChange={(e) => handleUserChange(e)} />
+          <input className="input_user" type="text" id="title" placeholder="E-mail" value={user} onChange={(e) => handleUserChange(e)} />
           Password:
-          <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
+          <input className="input_password" type="text" id="title" placeholder="Password" value={password} onChange={(e) => handlePassChange(e)} />
           <button className="submit_login" type="submit">Sign up</button>
         </form>
         <div className="backpage">
