@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useAlert } from 'react-alert';
 import { Link, useNavigate } from 'react-router-dom';
 import { setErrorSigninAction } from '../actions';
+import { signinApi } from '../API';
 
 const Signup = () => {
   const [state, setState] = useState({ name: '', user: '', password: '' });
@@ -23,8 +24,6 @@ const Signup = () => {
     setState({ ...state, password: e.target.value });
   };
 
-  const url = 'https://floating-harbor-48342.herokuapp.com/users';
-
   const authenticate = (data) => {
     if (data.check) {
       navigate('/login');
@@ -37,23 +36,10 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({
-        name: state.name,
-        email: state.user,
-        password: state.password,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
+    signinApi(state.name, state.user, state.password)
       .then((data) => {
         authenticate(data);
-      },
-      () => {});
+      });
   };
 
   return (
