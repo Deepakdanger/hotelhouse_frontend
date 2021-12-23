@@ -4,20 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Housetile from '../components/Housetile';
 import { selectedHouseAction, setCategoryAction, setStatusAction } from '../actions';
 import CategoryFilter from '../components/Categoryfilter';
-
-const url = 'https://floating-harbor-48342.herokuapp.com/houses';
-
-const fetchHouses = () => fetch(url, {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: localStorage.getItem('token'),
-  },
-})
-  .then((resp) => resp.json())
-  .then((data) => data,
-    () => {
-    });
+import { fetchHouses } from '../API';
 
 const Home = () => {
   const dispatch = useDispatch();
