@@ -1,68 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useAlert } from 'react-alert';
 import HouseFullDetail from '../components/Housefulldetail';
 import { setStatusAction } from '../actions';
+import { deleteFavApi, createFavApi, fetchhouseApi } from '../API';
 
 const Housedetails = () => {
   const [state, setState] = useState({ Notice: '' });
   const [datatest, setDatatest] = useState({ dataset: null });
   const { status } = useSelector((state) => state);
+  const alert = useAlert();
 
   const dispatch = useDispatch();
 
-  const url = 'https://floating-harbor-48342.herokuapp.com/houses/';
-  const urll = 'https://floating-harbor-48342.herokuapp.com/favourites/';
-
   const deleteFavourites = (id) => {
-    fetch((`${urll}/1`), {
-      method: 'DELETE',
-      body: JSON.stringify({
-        house_id: id,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
-      .then((resp) => resp.json())
+    deleteFavApi(id)
       .then((data) => {
+        alert.success('Bookmark Deleteted');
         setState({ ...state, Notice: data.done });
-      },
-      () => {
       });
   };
   const createFavourites = (id) => {
-    fetch((urll), {
-      method: 'POST',
-      body: JSON.stringify({
-        house_id: id,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
-      .then((resp) => resp.json())
+    createFavApi(id)
       .then((data) => {
+        alert.success('Bookmark created');
         setState({ ...state, Notice: data.done });
-      },
-      () => {
       });
   };
 
   useEffect(() => {
-    fetch((url + localStorage.getItem('houseid')), {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('token'),
-      },
-    })
-      .then((resp) => resp.json())
+    fetchhouseApi()
       .then((data) => {
         setDatatest({ ...datatest, dataset: data });
-      },
-      () => {
       });
   }, [status]);
 

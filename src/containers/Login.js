@@ -6,18 +6,19 @@ import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
 import { loginApi } from '../API';
 
 const Login = () => {
-  const [state, setState] = useState({ user: '', password: '' });
+  const [user, setUser] = useState('');
+  const [password, usePassword] = useState('');
   const { errormessage } = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const alert = useAlert();
 
   const handleUserChange = (e) => {
-    setState({ ...state, user: e.target.value });
+    setUser(e.target.value);
   };
 
   const handlePassChange = (e) => {
-    setState({ ...state, password: e.target.value });
+    usePassword(e.target.value);
   };
 
   const authenticate = (data) => {
@@ -37,7 +38,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginApi(state.user, state.password)
+    loginApi(user, password)
       .then((data) => {
         authenticate(data);
       });
@@ -51,9 +52,9 @@ const Login = () => {
         <span className="login_error">{errormessage}</span>
         <form className="col" onSubmit={(e) => handleSubmit(e)}>
           E-mail:
-          <input className="input_user" type="text" id="title" placeholder="Email" value={state.user} onChange={(e) => handleUserChange(e)} />
+          <input className="input_user" type="text" id="title" placeholder="Email" value={user} onChange={(e) => handleUserChange(e)} />
           Password:
-          <input className="input_password" type="text" id="title" placeholder="Password" value={state.password} onChange={(e) => handlePassChange(e)} />
+          <input className="input_password" type="text" id="title" placeholder="Password" value={password} onChange={(e) => handlePassChange(e)} />
           <button className="submit_login" type="submit">Log in</button>
         </form>
         <div className="backpage">

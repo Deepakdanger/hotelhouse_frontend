@@ -1,3 +1,4 @@
+const url = 'https://floating-harbor-48342.herokuapp.com/houses/';
 export const loginApi = (user, password) => fetch('https://floating-harbor-48342.herokuapp.com/authenticate', {
   method: 'POST',
   body: JSON.stringify({
@@ -49,6 +50,35 @@ export const fetchFavourites = () => fetch('https://floating-harbor-48342.heroku
     () => {
     });
 
-export const signinAPI = () => {
-  console.log('hello');
-};
+export const deleteFavApi = (id) => fetch('https://floating-harbor-48342.herokuapp.com/favourites/1', {
+  method: 'DELETE',
+  body: JSON.stringify({
+    house_id: id,
+  }),
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+})
+  .then((resp) => resp.json());
+
+export const createFavApi = (id) => fetch('https://floating-harbor-48342.herokuapp.com/favourites/', {
+  method: 'POST',
+  body: JSON.stringify({
+    house_id: id,
+  }),
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+})
+  .then((resp) => resp.json());
+
+export const fetchhouseApi = () => fetch((url + localStorage.getItem('houseid')), {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('token'),
+  },
+})
+  .then((resp) => resp.json());
