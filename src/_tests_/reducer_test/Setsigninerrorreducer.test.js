@@ -1,5 +1,5 @@
 import SetSignErrorReducer from '../../reducers/Setsigninerrorreducer';
-import { SET_ERROR_SIGNIN } from '../../actions/index';
+import { SET_ERROR_SIGNUP } from '../../actions/index';
 
 describe('SetSignErrorReducer function', () => {
   it('should return the initial state', () => {
@@ -8,9 +8,9 @@ describe('SetSignErrorReducer function', () => {
     expect(SetSignErrorReducer(undefined, action)).toEqual(initialState);
   });
 
-  it('should handle SET_ERROR_SIGNIN', () => {
+  it('should handle SET_ERROR_SIGNUP', () => {
     const action = {
-      type: SET_ERROR_SIGNIN,
+      type: SET_ERROR_SIGNUP,
       ele: 'Invalid',
     };
     const expectedState = 'Invalid';
