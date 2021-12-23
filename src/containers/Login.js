@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useAlert } from 'react-alert';
 import { Link, useNavigate } from 'react-router-dom';
 import { setCurrentTokenAction, setErrorLoginAction } from '../actions';
+import { loginApi } from '../API';
 
 const Login = () => {
   const [state, setState] = useState({ user: '', password: '' });
@@ -18,8 +19,6 @@ const Login = () => {
   const handlePassChange = (e) => {
     setState({ ...state, password: e.target.value });
   };
-
-  const url = 'https://floating-harbor-48342.herokuapp.com/authenticate';
 
   const authenticate = (data) => {
     if (data.auth_token) {
@@ -38,22 +37,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({
-        email: state.user,
-        password: state.password,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
+    loginApi(state.user, state.password)
       .then((data) => {
         authenticate(data);
-      },
-      () => {});
+      });
   };
 
   return (
