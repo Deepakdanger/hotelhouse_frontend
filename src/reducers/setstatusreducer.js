@@ -1,6 +1,6 @@
 import { SET_STATUS } from '../actions/index';
 
-const SetStatusReducer = (state = '', action) => {
+const SetStatusReducer = (state = 'we', action) => {
   switch (action.type) {
     case SET_STATUS:
       return action.ele;

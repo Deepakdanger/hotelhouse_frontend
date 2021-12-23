@@ -20,17 +20,8 @@ const rootReducer = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const initialState = {
-  currentusertoken: '',
-  selectedhouse: '',
-  errormessage: '',
-  errorsignup: '',
-  filter: 'All',
-  status: 'we',
-};
-
 const store = createStore(
-  rootReducer, initialState,
+  rootReducer,
   composeEnhancers(applyMiddleware(reduxThunk)),
 );
 export default store;
